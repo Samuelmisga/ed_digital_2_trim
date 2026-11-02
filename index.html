@@ -6,11 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Blog do Samuel: cultura das motos, história e curiosidades sobre o grau.">
+    <meta name="description" content="Mundo do Grau - Conheça o universo das motos, motociclismo, cultura e curiosidades.">
 
-    <title>Blog Samuel | Mundo do Grau</title>
+    <title>Mundo do Grau | Cultura Sobre Duas Rodas</title>
 
     <style>
+        /* CONFIGURAÇÕES GERAIS */
+
         * {
             margin: 0;
             padding: 0;
@@ -18,195 +20,570 @@
         }
 
         :root {
-            --azul-escuro: #112A46;
-            --azul: #1d4d7a;
-            --azul-claro: #e8f1fa;
-            --fundo: #eef3f8;
+            --preto: #080e15;
+            --preto-claro: #101b27;
+            --azul: #078bff;
+            --azul-claro: #42aaff;
             --branco: #ffffff;
-            --texto: #26384a;
+            --cinza: #aab6c4;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background: var(--fundo);
-            color: var(--texto);
-            line-height: 1.7;
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--preto);
+            color: var(--branco);
+            line-height: 1.6;
         }
 
-        /* CABEÇALHO */
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* MENU */
 
         header {
-            background: linear-gradient(135deg, #071525, #245785);
-            color: white;
-            text-align: center;
-            padding: 45px 20px 30px;
+            height: 75px;
+            background: rgba(8, 14, 21, 0.97);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 8%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #243342;
         }
 
-        header h1 {
-            font-size: 34px;
-            margin-bottom: 8px;
+        .logo {
+            font-size: 25px;
+            font-weight: 900;
+            font-style: italic;
+            line-height: 1;
         }
 
-        header p {
-            color: #dce8f5;
+        .logo span {
+            color: var(--azul);
+        }
+
+        .logo small {
+            display: block;
+            font-size: 10px;
+            letter-spacing: 4px;
+            color: var(--cinza);
+            font-style: normal;
         }
 
         nav {
-            background: #0b2038;
-            padding: 15px;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 28px;
         }
 
         nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
+            font-size: 13px;
             font-weight: bold;
+            text-transform: uppercase;
             transition: 0.3s;
         }
 
         nav a:hover {
-            color: #8ec5ff;
-        }
-
-        /* CONTEÚDO */
-
-        main {
-            max-width: 900px;
-            margin: 35px auto;
-            padding: 0 20px;
-        }
-
-        article {
-            background: var(--branco);
-            padding: 28px;
-            margin-bottom: 25px;
-            border-radius: 14px;
-            border: 1px solid #dce5ee;
-            box-shadow: 0 5px 18px rgba(17, 42, 70, 0.07);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        article:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 9px 24px rgba(17, 42, 70, 0.12);
-        }
-
-        article h2 {
-            color: var(--azul-escuro);
-            margin-bottom: 12px;
-            font-size: 24px;
-        }
-
-        article h3 {
             color: var(--azul);
-            margin-top: 25px;
-            margin-bottom: 8px;
         }
 
-        article p {
-            margin-bottom: 12px;
+        .botao-menu {
+            display: none;
+            background: none;
+            color: white;
+            border: none;
+            font-size: 27px;
+            cursor: pointer;
         }
 
-        .artigo-autor {
-            color: #66809a;
-            font-size: 14px;
+        .botao-header {
+            background: var(--azul);
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 13px;
             font-weight: bold;
-            margin-bottom: 18px;
+            transition: 0.3s;
+        }
+
+        .botao-header:hover {
+            background: #0066c5;
+            transform: translateY(-2px);
+        }
+
+        /* INÍCIO */
+
+        .hero {
+            min-height: 530px;
+            background:
+                linear-gradient(90deg, #080e15 5%, rgba(8,14,21,0.8) 43%, transparent 100%),
+                url("https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1800&q=85");
+
+            background-position: center;
+            background-size: cover;
+
+            display: flex;
+            align-items: center;
+            padding: 70px 12%;
+        }
+
+        .hero-conteudo {
+            max-width: 620px;
+            animation: aparecer 1s ease;
+        }
+
+        .subtitulo {
+            color: var(--azul-claro);
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 78px);
+            line-height: 1;
+            font-weight: 900;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--azul);
+        }
+
+        .hero p {
+            color: #d1d8e0;
+            max-width: 480px;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .botoes {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .botao {
+            display: inline-block;
+            padding: 14px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .botao-azul {
+            background: var(--azul);
+        }
+
+        .botao-contorno {
+            border: 1px solid white;
+        }
+
+        .botao:hover {
+            transform: translateY(-4px);
+            filter: brightness(1.15);
+        }
+
+        /* DESTAQUES */
+
+        .destaques {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background: #0e1924;
+            padding: 30px 8%;
+            border-bottom: 1px solid #243342;
         }
 
         .destaque {
-            background: var(--azul-claro);
-            border-left: 4px solid var(--azul);
-            padding: 15px;
-            border-radius: 6px;
-            margin-top: 15px;
+            text-align: center;
+            padding: 10px;
+            border-right: 1px solid #30404e;
         }
 
-        /* IMAGENS */
+        .destaque:last-child {
+            border: none;
+        }
 
-        .imagem {
+        .destaque .icone {
+            color: var(--azul);
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .destaque h3 {
+            font-size: 15px;
+        }
+
+        .destaque p {
+            color: var(--cinza);
+            font-size: 12px;
+        }
+
+        /* SEÇÕES */
+
+        .secao {
+            padding: 75px 8%;
+        }
+
+        .titulo-secao {
+            margin-bottom: 35px;
+        }
+
+        .titulo-secao span {
+            color: var(--azul);
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .titulo-secao h2 {
+            font-size: 35px;
+            margin-top: 5px;
+        }
+
+        .titulo-secao p {
+            color: var(--cinza);
+        }
+
+        /* CARDS */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: #111d29;
+            border: 1px solid #263747;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--azul);
+            box-shadow: 0 10px 30px rgba(0, 139, 255, 0.12);
+        }
+
+        .card img {
             width: 100%;
-            height: 260px;
+            height: 190px;
+            object-fit: cover;
+            display: block;
+            transition: 0.4s;
+        }
+
+        .card:hover img {
+            transform: scale(1.04);
+        }
+
+        .card-imagem {
+            overflow: hidden;
+        }
+
+        .card-conteudo {
+            padding: 20px;
+        }
+
+        .card-conteudo h3 {
+            margin-bottom: 10px;
+            font-size: 19px;
+        }
+
+        .card-conteudo p {
+            color: var(--cinza);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .link-card {
+            color: var(--azul-claro);
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        /* SOBRE */
+
+        .sobre {
+            background:
+                linear-gradient(90deg, #0c1926 30%, rgba(8,14,21,0.8)),
+                url("https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=1600&q=80");
+
+            background-position: center;
+            background-size: cover;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .sobre h2 {
+            font-size: 38px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .sobre h2 span {
+            color: var(--azul);
+        }
+
+        .sobre p {
+            color: #c1ccd7;
+            margin-bottom: 15px;
+        }
+
+        .valores {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .valor {
+            background: rgba(12, 26, 40, 0.9);
+            border: 1px solid #263d50;
+            padding: 22px;
+            border-radius: 10px;
+        }
+
+        .valor strong {
+            color: var(--azul-claro);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .valor p {
+            font-size: 13px;
+            margin: 0;
+        }
+
+        /* GALERIA */
+
+        .galeria {
+            background: #0e1924;
+        }
+
+        .fotos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .fotos img {
+            width: 100%;
+            height: 220px;
             object-fit: cover;
             border-radius: 10px;
-            margin: 15px 0;
+            transition: 0.3s;
         }
 
-        /* CURTIDAS */
-
-        button {
-            background: var(--azul-claro);
-            color: var(--azul-escuro);
-            border: 1px solid #c9d9e9;
-            padding: 10px 18px;
-            border-radius: 25px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.25s;
+        .fotos img:hover {
+            transform: scale(1.03);
+            filter: brightness(1.15);
         }
 
-        button:hover {
-            background: #d5e8fb;
-            transform: scale(1.05);
+        /* SEGURANÇA */
+
+        .seguranca {
+            background: #111d29;
+            text-align: center;
         }
 
-        button.curtido {
-            background: #d5e8fb;
-            border-color: #6ba5dc;
+        .seguranca h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
         }
 
-        button span {
-            margin-left: 5px;
+        .seguranca p {
+            color: var(--cinza);
+            max-width: 650px;
+            margin: auto;
+        }
+
+        /* CONTATO */
+
+        .contato {
+            text-align: center;
+        }
+
+        .contato h2 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .contato p {
+            color: var(--cinza);
+            margin-bottom: 25px;
         }
 
         /* RODAPÉ */
 
         footer {
-            background: var(--azul-escuro);
-            color: white;
-            text-align: center;
-            padding: 25px 15px;
-            margin-top: 45px;
+            background: #050a10;
+            padding: 35px 8%;
+            border-top: 1px solid #263747;
+        }
+
+        .footer-conteudo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
         footer p {
-            margin: 5px;
-        }
-
-        .footer-sub {
-            color: #b9cde0;
+            color: var(--cinza);
             font-size: 13px;
         }
 
-        /* CELULAR */
+        .redes {
+            display: flex;
+            gap: 20px;
+        }
 
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 26px;
+        .redes a:hover {
+            color: var(--azul);
+        }
+
+        /* ANIMAÇÃO */
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
             }
 
-            nav a {
-                margin: 0 7px;
-                font-size: 14px;
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* RESPONSIVIDADE */
+
+        @media (max-width: 1000px) {
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            main {
-                margin: 20px auto;
-                padding: 0 12px;
+            header {
+                padding: 0 5%;
             }
 
-            article {
-                padding: 20px;
+            nav {
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            header {
+                height: 68px;
             }
 
-            article h2 {
-                font-size: 21px;
+            .botao-menu {
+                display: block;
             }
 
-            .imagem {
-                height: 190px;
+            nav {
+                display: none;
+                position: absolute;
+                top: 68px;
+                left: 0;
+                width: 100%;
+                background: #080e15;
+                flex-direction: column;
+                padding: 25px;
+                gap: 22px;
+                border-bottom: 1px solid #263747;
+            }
+
+            nav.aberto {
+                display: flex;
+            }
+
+            .botao-header {
+                display: none;
+            }
+
+            .hero {
+                min-height: 500px;
+                padding: 60px 7%;
+                background-position: 60% center;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .destaques {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 20px 5%;
+            }
+
+            .destaque:nth-child(2) {
+                border-right: none;
+            }
+
+            .destaque:nth-child(1),
+            .destaque:nth-child(2) {
+                border-bottom: 1px solid #30404e;
+            }
+
+            .secao {
+                padding: 55px 6%;
+            }
+
+            .titulo-secao h2 {
+                font-size: 27px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .sobre {
+                grid-template-columns: 1fr;
+            }
+
+            .fotos {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .fotos img {
+                height: 150px;
+            }
+
+            .footer-conteudo {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
             }
         }
     </style>
@@ -214,214 +591,399 @@
 
 <body>
 
+    <!-- MENU -->
+
     <header>
-        <h1>🏍️ MUNDO DO GRAU</h1>
-        <p>Velocidade, cultura, motos e paixão sobre duas rodas!</p>
+
+        <a href="#inicio" class="logo">
+            MUNDO DO <span>GRAU</span>
+            <small>MOTOS • CULTURA • RESPEITO</small>
+        </a>
+
+        <button class="botao-menu" id="menuBotao"
+            aria-label="Abrir menu" aria-expanded="false">
+            ☰
+        </button>
+
+        <nav id="menu">
+            <a href="#inicio">Início</a>
+            <a href="#motos">Motos</a>
+            <a href="#curiosidades">Curiosidades</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#sobre">Sobre</a>
+        </nav>
+
+        <a href="#comunidade" class="botao-header">
+            VIVA ESSA CULTURA
+        </a>
+
     </header>
 
-    <nav>
-        <a href="#inicio">Início</a>
-        <a href="#motos">Motos</a>
-        <a href="#curiosidades">Curiosidades</a>
-        <a href="#sobre">Sobre</a>
-    </nav>
+    <!-- INÍCIO -->
 
-    <main>
+    <section class="hero" id="inicio">
 
-        <article id="inicio">
+        <div class="hero-conteudo">
 
-            <h2>🏍️ Bem-vindo ao Mundo do Grau!</h2>
-
-            <p class="artigo-autor">Por: Samuel Misga</p>
-
-            <p>
-                Sejam bem-vindos ao meu blog!
-
-                Aqui vamos falar sobre o universo das motos,
-                a cultura do grau, modelos populares, eventos,
-                histórias e curiosidades do motociclismo.
-            </p>
-
-            <div class="destaque">
-                <strong>Nosso objetivo:</strong>
-                Conhecer melhor a cultura das motos, valorizando
-                o respeito, a responsabilidade e a segurança no trânsito.
+            <div class="subtitulo">
+                MOTOS • CULTURA • LIBERDADE
             </div>
 
-            <br>
-
-            <button class="curtir">
-                🏍️ <span>0</span>
-            </button>
-
-        </article>
-
-        <article id="motos">
-
-            <h2>🔥 Motos populares no mundo do grau</h2>
+            <h1>
+                MUNDO DO <span>GRAU</span>
+            </h1>
 
             <p>
-                Algumas motos ficaram bastante conhecidas
-                entre os apaixonados pela cultura das duas rodas.
+                Aqui é o lugar certo para quem vive a paixão
+                pelas duas rodas. Informações, dicas, curiosidades
+                e tudo sobre o universo das motos.
             </p>
 
-            <h3>1. Honda CG 160</h3>
+            <div class="botoes">
 
-            <p>
-                A CG 160 é uma das motocicletas mais conhecidas
-                do Brasil. É bastante presente nas cidades e
-                possui diferentes versões.
-            </p>
+                <a href="#motos" class="botao botao-azul">
+                    🏍️ Conheça as motos
+                </a>
 
-            <h3>2. Yamaha Fazer 250</h3>
+                <a href="#galeria" class="botao botao-contorno">
+                    Ver galeria
+                </a>
 
-            <p>
-                A Fazer 250 é conhecida pelo seu estilo esportivo,
-                conforto e motor de 250 cilindradas.
-            </p>
-
-            <h3>3. Honda XRE 300</h3>
-
-            <p>
-                A XRE 300 é uma motocicleta de estilo trail,
-                conhecida pela versatilidade e posição de pilotagem.
-            </p>
-
-            <h3>4. Yamaha MT-03</h3>
-
-            <p>
-                A MT-03 possui visual agressivo e esportivo,
-                sendo uma opção conhecida entre os fãs de motos.
-            </p>
-
-            <div class="destaque">
-                <strong>Você sabia?</strong>
-                A escolha de uma moto deve considerar experiência,
-                habilitação, manutenção e equipamentos de proteção.
             </div>
 
-            <br>
+        </div>
 
-            <button class="curtir">
-                🔥 <span>0</span>
-            </button>
+    </section>
 
-        </article>
+    <!-- DESTAQUES -->
 
-        <article id="curiosidades">
+    <section class="destaques">
 
-            <h2>💡 Curiosidades sobre o mundo do grau</h2>
+        <div class="destaque">
+            <div class="icone">🏍️</div>
+            <h3>MOTOS</h3>
+            <p>Conheça os modelos</p>
+        </div>
 
-            <h3>1. O que significa grau?</h3>
+        <div class="destaque">
+            <div class="icone">🔥</div>
+            <h3>CULTURA</h3>
+            <p>O universo das duas rodas</p>
+        </div>
 
-            <p>
-                Grau é o nome popular dado a uma manobra em que
-                a motocicleta fica apoiada na roda traseira.
-                Sua prática em vias públicas pode causar acidentes
-                e colocar outras pessoas em risco.
-            </p>
+        <div class="destaque">
+            <div class="icone">🛡️</div>
+            <h3>SEGURANÇA</h3>
+            <p>Proteção em primeiro lugar</p>
+        </div>
 
-            <h3>2. A cultura das motos</h3>
+        <div class="destaque">
+            <div class="icone">👥</div>
+            <h3>COMUNIDADE</h3>
+            <p>Paixão compartilhada</p>
+        </div>
 
-            <p>
-                A cultura das motos envolve encontros, amizades,
-                personalização, eventos e comunidades de apaixonados
-                pelo motociclismo.
-            </p>
+    </section>
 
-            <h3>3. Encontros de motociclistas</h3>
+    <!-- MOTOS -->
 
-            <p>
-                Existem eventos em várias cidades brasileiras
-                que reúnem motociclistas para compartilhar experiências,
-                conhecer modelos e conversar sobre motos.
-            </p>
+    <section class="secao" id="motos">
 
-            <h3>4. Equipamentos de proteção</h3>
+        <div class="titulo-secao">
+            <span>01 / MOTOCICLETAS</span>
+            <h2>Conheça as <span style="color:#078bff">máquinas</span></h2>
+            <p>Alguns modelos conhecidos entre os apaixonados por motos.</p>
+        </div>
 
-            <p>
-                Capacete adequado, luvas, jaqueta, calçado resistente
-                e outros equipamentos ajudam a proteger o motociclista.
-            </p>
+        <div class="cards">
 
-            <div class="destaque">
-                <strong>Respeito em primeiro lugar!</strong>
-                Manobras devem ficar restritas a ambientes apropriados,
-                legalizados e supervisionados. Nunca coloque outras
-                pessoas em risco no trânsito.
+            <div class="card">
+                <div class="card-imagem">
+                    <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=700&q=80"
+                        alt="Motocicleta">
+                </div>
+                <div class="card-conteudo">
+                    <h3>Honda CG 160</h3>
+                    <p>Uma das motocicletas mais conhecidas e populares do Brasil.</p>
+                    <a href="#curiosidades" class="link-card">SAIBA MAIS →</a>
+                </div>
             </div>
 
-            <br>
+            <div class="card">
+                <div class="card-imagem">
+                    <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=700&q=80"
+                        alt="Moto esportiva">
+                </div>
+                <div class="card-conteudo">
+                    <h3>Yamaha Fazer 250</h3>
+                    <p>Uma moto conhecida pelo estilo esportivo e versatilidade.</p>
+                    <a href="#curiosidades" class="link-card">SAIBA MAIS →</a>
+                </div>
+            </div>
 
-            <button class="curtir">
-                🏆 <span>0</span>
-            </button>
+            <div class="card">
+                <div class="card-imagem">
+                    <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=700&q=80"
+                        alt="Motocicleta de aventura">
+                </div>
+                <div class="card-conteudo">
+                    <h3>Honda XRE 300</h3>
+                    <p>Uma motocicleta de estilo trail e grande versatilidade.</p>
+                    <a href="#curiosidades" class="link-card">SAIBA MAIS →</a>
+                </div>
+            </div>
 
-        </article>
+            <div class="card">
+                <div class="card-imagem">
+                    <img src="https://images.unsplash.com/photo-1558980394-0c7c4d2b3e2c?auto=format&fit=crop&w=700&q=80"
+                        alt="Moto esportiva">
+                </div>
+                <div class="card-conteudo">
+                    <h3>Yamaha MT-03</h3>
+                    <p>Visual marcante e proposta esportiva para os fãs de motos.</p>
+                    <a href="#curiosidades" class="link-card">SAIBA MAIS →</a>
+                </div>
+            </div>
 
-        <article id="sobre">
+        </div>
 
-            <h2>👨‍💻 Sobre o Blog</h2>
+    </section>
+
+    <!-- CURIOSIDADES -->
+
+    <section class="secao galeria" id="curiosidades">
+
+        <div class="titulo-secao">
+            <span>02 / UNIVERSO DO GRAU</span>
+            <h2>Explore nossa <span style="color:#078bff">cultura</span></h2>
+            <p>Conhecimento, histórias e informações sobre o motociclismo.</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-conteudo">
+                    <div class="icone">🏍️</div>
+                    <h3>O que é grau?</h3>
+                    <p>Conheça a história e o significado dessa expressão na cultura das motos.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-conteudo">
+                    <div class="icone">👥</div>
+                    <h3>Cultura das motos</h3>
+                    <p>Um estilo de vida que une pessoas com a mesma paixão.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-conteudo">
+                    <div class="icone">📅</div>
+                    <h3>Encontros</h3>
+                    <p>Conheça os eventos e encontros de motociclistas.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-conteudo">
+                    <div class="icone">🛡️</div>
+                    <h3>Equipamentos</h3>
+                    <p>Informações sobre capacetes, jaquetas, luvas e proteção.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SOBRE -->
+
+    <section class="secao sobre" id="sobre">
+
+        <div>
+            <div class="subtitulo">03 / NOSSO PROPÓSITO</div>
+
+            <h2>
+                Mais que motos,<br>
+                uma <span>comunidade.</span>
+            </h2>
 
             <p>
-                Meu nome é Samuel e criei este blog para compartilhar
-                minha curiosidade e interesse pelo mundo das motos.
+                O Mundo do Grau nasceu para reunir informações,
+                curiosidades e novidades sobre o universo das
+                duas rodas.
             </p>
 
             <p>
-                Aqui você encontra informações sobre motocicletas,
-                cultura do grau, modelos, histórias e curiosidades.
+                Acreditamos que a verdadeira paixão pelo motociclismo
+                também envolve responsabilidade, respeito e união.
             </p>
 
-            <p>
-                Obrigado por visitar o Mundo do Grau!
-            </p>
+            <a href="#comunidade" class="botao botao-azul">
+                CONHEÇA NOSSO SITE →
+            </a>
+        </div>
 
-        </article>
+        <div class="valores">
 
-    </main>
+            <div class="valor">
+                <strong>🛡️ Respeito</strong>
+                <p>Responsabilidade no trânsito e nas ruas.</p>
+            </div>
+
+            <div class="valor">
+                <strong>👥 União</strong>
+                <p>Entre pessoas apaixonadas por motos.</p>
+            </div>
+
+            <div class="valor">
+                <strong>🏍️ Paixão</strong>
+                <p>O amor pelo mundo das duas rodas.</p>
+            </div>
+
+            <div class="valor">
+                <strong>⭐ Segurança</strong>
+                <p>Proteção sempre em primeiro lugar.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- GALERIA -->
+
+    <section class="secao galeria" id="galeria">
+
+        <div class="titulo-secao">
+            <span>04 / GALERIA</span>
+            <h2>Galeria de <span style="color:#078bff">fotos</span></h2>
+            <p>Imagens que representam o universo das duas rodas.</p>
+        </div>
+
+        <div class="fotos">
+
+            <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=700&q=80"
+                alt="Moto em destaque">
+
+            <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=700&q=80"
+                alt="Motocicleta esportiva">
+
+            <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=700&q=80"
+                alt="Moto de aventura">
+
+            <img src="https://images.unsplash.com/photo-1558980394-0c7c4d2b3e2c?auto=format&fit=crop&w=700&q=80"
+                alt="Moto">
+
+            <img src="https://images.unsplash.com/photo-1558981852-426c6c22a060?auto=format&fit=crop&w=700&q=80"
+                alt="Motociclismo">
+
+            <img src="https://images.unsplash.com/photo-1558980664-10ea4d0c6d1d?auto=format&fit=crop&w=700&q=80"
+                alt="Motocicleta na estrada">
+
+        </div>
+
+    </section>
+
+    <!-- SEGURANÇA -->
+
+    <section class="secao seguranca">
+
+        <h2>🏁 A paixão é grande. A responsabilidade também!</h2>
+
+        <p>
+            Valorize a vida, utilize equipamentos de proteção e respeite
+            as leis de trânsito. Manobras devem acontecer somente em
+            locais apropriados, autorizados e supervisionados.
+        </p>
+
+    </section>
+
+    <!-- COMUNIDADE -->
+
+    <section class="secao contato" id="comunidade">
+
+        <div class="subtitulo">FAÇA PARTE DESSA CULTURA</div>
+
+        <h2>O mundo das motos espera por você!</h2>
+
+        <p>
+            Continue explorando, conhecendo modelos e descobrindo
+            tudo sobre o universo das duas rodas.
+        </p>
+
+        <a href="#inicio" class="botao botao-azul">
+            VOLTAR AO INÍCIO ↑
+        </a>
+
+    </section>
+
+    <!-- RODAPÉ -->
 
     <footer>
-        <p><strong>🏍️ Blog do Samuel - Mundo do Grau</strong></p>
 
-        <p class="footer-sub">
-            Motos • Cultura • Curiosidades • Motociclismo
-        </p>
+        <div class="footer-conteudo">
 
-        <p class="footer-sub">
-            © 2026 - Todos os direitos reservados.
-        </p>
+            <a href="#inicio" class="logo">
+                MUNDO DO <span>GRAU</span>
+                <small>MOTOS • CULTURA • RESPEITO</small>
+            </a>
+
+            <p>
+                © <span id="ano"></span> Mundo do Grau.
+                Todos os direitos reservados.
+            </p>
+
+            <div class="redes">
+                <a href="#inicio">Início</a>
+                <a href="#motos">Motos</a>
+                <a href="#galeria">Galeria</a>
+            </div>
+
+        </div>
+
     </footer>
 
     <script>
 
-        const botoes = document.querySelectorAll(".curtir");
+        // MENU PARA CELULAR
 
-        botoes.forEach((botao) => {
+        const menuBotao = document.getElementById("menuBotao");
+        const menu = document.getElementById("menu");
 
-            let curtiu = false;
+        menuBotao.addEventListener("click", () => {
 
-            botao.addEventListener("click", () => {
+            const aberto = menu.classList.toggle("aberto");
 
-                const contador = botao.querySelector("span");
+            menuBotao.setAttribute("aria-expanded", aberto);
+            menuBotao.setAttribute(
+                "aria-label",
+                aberto ? "Fechar menu" : "Abrir menu"
+            );
 
-                let quantidade = Number(contador.textContent);
+            menuBotao.textContent = aberto ? "✕" : "☰";
 
-                if (!curtiu) {
-                    quantidade++;
-                    curtiu = true;
-                    botao.classList.add("curtido");
-                } else {
-                    quantidade--;
-                    curtiu = false;
-                    botao.classList.remove("curtido");
-                }
+        });
 
-                contador.textContent = quantidade;
+        // FECHAR MENU AO CLICAR EM UM LINK
+
+        document.querySelectorAll("#menu a").forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                menu.classList.remove("aberto");
+                menuBotao.textContent = "☰";
+                menuBotao.setAttribute("aria-expanded", "false");
+                menuBotao.setAttribute("aria-label", "Abrir menu");
 
             });
 
         });
+
+        // ANO AUTOMÁTICO
+
+        document.getElementById("ano").textContent =
+            new Date().getFullYear();
 
     </script>
 
