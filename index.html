@@ -4,8 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Mundo do Grau - Tudo sobre motos e cultura das duas rodas.">
-<title>Mundo do Grau | Duas Rodas</title>
+<title>NEYMAR JR. | O Craque Brasileiro</title>
 
 <style>
 * {
@@ -15,12 +14,12 @@
 }
 
 :root {
-    --preto: #080e15;
-    --card: #111d29;
-    --azul: #078bff;
-    --azul-claro: #42aaff;
+    --preto: #080a0d;
+    --card: #14191d;
+    --verde: #00c875;
+    --dourado: #d9b45b;
     --branco: #fff;
-    --cinza: #aab6c4;
+    --cinza: #aab2b9;
 }
 
 html { scroll-behavior: smooth; }
@@ -29,291 +28,347 @@ body {
     font-family: Arial, sans-serif;
     background: var(--preto);
     color: var(--branco);
-    line-height: 1.6;
+    overflow-x: hidden;
 }
 
 a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
 }
 
 header {
-    min-height: 75px;
-    background: rgba(8,14,21,.97);
+    height: 78px;
+    padding: 0 8%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 8%;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid #263747;
+    background: rgba(8,10,13,.96);
+    border-bottom: 1px solid #282c30;
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 25px;
     font-weight: 900;
     font-style: italic;
+    letter-spacing: 1px;
 }
 
-.logo span { color: var(--azul); }
+.logo span { color: var(--verde); }
 
 .logo small {
     display: block;
-    font-size: 10px;
+    font-size: 9px;
+    color: var(--dourado);
     letter-spacing: 4px;
-    color: var(--cinza);
     font-style: normal;
 }
 
 nav {
     display: flex;
-    gap: 25px;
+    gap: 27px;
 }
 
 nav a {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
     text-transform: uppercase;
     transition: .3s;
 }
 
-nav a:hover { color: var(--azul); }
+nav a:hover { color: var(--verde); }
 
-.botao-menu {
+.menu-btn {
     display: none;
+    color: white;
     background: none;
     border: none;
-    color: white;
     font-size: 27px;
     cursor: pointer;
 }
 
-.botao-header, .botao {
-    background: var(--azul);
-    padding: 12px 22px;
-    border-radius: 7px;
-    font-weight: bold;
-    transition: .3s;
-}
-
-.botao:hover, .botao-header:hover {
-    background: #0066c5;
-    transform: translateY(-3px);
-}
-
-/* INÍCIO */
+/* CAPA */
 
 .hero {
-    min-height: 540px;
-    background:
-    linear-gradient(90deg,#080e15 5%,rgba(8,14,21,.8) 50%,transparent),
-    url("https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1800&q=85");
-    background-size: cover;
-    background-position: center;
+    min-height: 680px;
     display: flex;
     align-items: center;
-    padding: 70px 12%;
+    padding: 70px 10%;
+    position: relative;
+    background:
+    linear-gradient(90deg, #080a0d 5%, rgba(8,10,13,.82) 43%, rgba(8,10,13,.08) 100%),
+    url("https://commons.wikimedia.org/wiki/Special:FilePath/Neymar%20Junior%20Brazil%20V%20Morocco%2013%20June%202026-40.jpg");
+    background-size: cover;
+    background-position: center 30%;
 }
 
-.hero-conteudo { max-width: 620px; }
+.hero-content {
+    max-width: 600px;
+    animation: subir 1s ease;
+}
 
-.subtitulo {
-    color: var(--azul-claro);
-    font-size: 13px;
+.tag {
+    color: var(--dourado);
+    letter-spacing: 5px;
+    font-size: 12px;
     font-weight: bold;
-    letter-spacing: 4px;
-    margin-bottom: 15px;
-}
-
-.hero h1 {
-    font-size: clamp(45px,7vw,78px);
-    line-height: 1;
-    font-style: italic;
     margin-bottom: 20px;
 }
 
-.hero h1 span { color: var(--azul); }
+.hero h1 {
+    font-size: clamp(65px, 10vw, 115px);
+    font-weight: 900;
+    line-height: .9;
+    font-style: italic;
+}
+
+.hero h1 span {
+    color: var(--verde);
+    display: block;
+}
+
+.hero h2 {
+    color: var(--dourado);
+    letter-spacing: 8px;
+    font-size: 22px;
+    margin: 20px 0;
+}
 
 .hero p {
-    color: #d1d8e0;
-    max-width: 480px;
+    color: #d3d7da;
+    font-size: 16px;
+    max-width: 450px;
+    line-height: 1.8;
     margin-bottom: 30px;
 }
 
-.botoes {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
+.btn {
+    display: inline-block;
+    padding: 15px 27px;
+    background: var(--verde);
+    color: #06130d;
+    font-size: 13px;
+    font-weight: 900;
+    border-radius: 5px;
+    transition: .3s;
 }
 
-.botao-contorno {
+.btn:hover {
+    transform: translateY(-4px);
+    background: #00ed8a;
+}
+
+.btn-outline {
     border: 1px solid white;
-    padding: 12px 22px;
-    border-radius: 7px;
+    padding: 14px 25px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.btn-outline:hover {
+    border-color: var(--verde);
+    color: var(--verde);
 }
 
 /* DESTAQUES */
 
-.destaques {
+.numeros {
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    background: #0e1924;
-    padding: 30px 8%;
-    border-bottom: 1px solid #263747;
+    padding: 35px 8%;
+    background: #101519;
+    border-top: 1px solid #30383c;
+    border-bottom: 1px solid #30383c;
 }
 
-.destaque {
+.numero {
     text-align: center;
-    padding: 10px;
-    border-right: 1px solid #30404e;
+    border-right: 1px solid #343b40;
 }
 
-.destaque:last-child { border: none; }
+.numero:last-child { border: none; }
 
-.icone {
-    color: var(--azul);
-    font-size: 30px;
+.numero h2 {
+    color: var(--verde);
+    font-size: 34px;
 }
 
-.destaque p {
+.numero p {
     color: var(--cinza);
     font-size: 12px;
+    letter-spacing: 2px;
 }
 
 /* SEÇÕES */
 
-.secao { padding: 75px 8%; }
+.secao { padding: 85px 9%; }
 
-.titulo-secao { margin-bottom: 35px; }
+.titulo {
+    margin-bottom: 40px;
+}
 
-.titulo-secao span {
-    color: var(--azul);
+.titulo span {
+    color: var(--dourado);
     font-size: 12px;
     font-weight: bold;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
 }
 
-.titulo-secao h2 {
-    font-size: 35px;
-    margin-top: 5px;
+.titulo h2 {
+    font-size: 38px;
+    margin-top: 8px;
 }
 
-.titulo-secao p { color: var(--cinza); }
+.titulo h2 b { color: var(--verde); }
 
-/* MOTOS */
+.titulo p {
+    color: var(--cinza);
+    margin-top: 8px;
+}
 
-.cards {
+/* HISTÓRIA */
+
+.historia {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.historia-img {
+    height: 470px;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #343b40;
+}
+
+.historia-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.historia-texto h2 {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.historia-texto h2 span { color: var(--verde); }
+
+.historia-texto p {
+    color: var(--cinza);
+    line-height: 1.9;
+    margin-bottom: 17px;
+}
+
+/* CARREIRA */
+
+.carreira { background: #101519; }
+
+.timeline {
     display: grid;
     grid-template-columns: repeat(4,1fr);
     gap: 20px;
 }
 
-.card {
+.time-card {
     background: var(--card);
-    border: 1px solid #263747;
-    border-radius: 12px;
-    overflow: hidden;
+    padding: 25px;
+    border: 1px solid #303a40;
+    border-radius: 10px;
     transition: .3s;
 }
 
-.card:hover {
-    transform: translateY(-8px);
-    border-color: var(--azul);
-    box-shadow: 0 10px 30px rgba(0,139,255,.15);
+.time-card:hover {
+    border-color: var(--verde);
+    transform: translateY(-7px);
 }
 
-.card-imagem {
-    height: 220px;
-    background: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.card img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    transition: .4s;
-}
-
-.card:hover img { transform: scale(1.05); }
-
-.card-conteudo { padding: 20px; }
-
-.card-conteudo h3 {
-    font-size: 19px;
-    margin-bottom: 10px;
-}
-
-.card-conteudo p {
-    color: var(--cinza);
+.time-card .ano {
+    color: var(--dourado);
     font-size: 14px;
-    margin-bottom: 15px;
-}
-
-.link-card {
-    color: var(--azul-claro);
-    font-size: 13px;
     font-weight: bold;
 }
 
-.curiosidades, .galeria { background: #0e1924; }
+.time-card h3 {
+    color: var(--verde);
+    font-size: 22px;
+    margin: 12px 0;
+}
 
-/* SOBRE */
+.time-card p {
+    color: var(--cinza);
+    font-size: 14px;
+    line-height: 1.7;
+}
 
-.sobre {
+/* MOMENTOS */
+
+.momentos {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.momento {
+    background: var(--card);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #303a40;
+}
+
+.momento img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+    transition: .4s;
+}
+
+.momento:hover img { transform: scale(1.05); }
+
+.momento div { padding: 20px; }
+
+.momento h3 { margin-bottom: 8px; }
+
+.momento p {
+    color: var(--cinza);
+    font-size: 13px;
+}
+
+/* SELEÇÃO */
+
+.selecao {
+    text-align: center;
     background:
-    linear-gradient(90deg,#0c1926 30%,rgba(8,14,21,.85)),
-    url("https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=1600&q=80");
+    linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.9)),
+    url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1600&q=85");
     background-size: cover;
     background-position: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: center;
 }
 
-.sobre h2 {
-    font-size: 38px;
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
-
-.sobre h2 span { color: var(--azul); }
-
-.sobre p {
-    color: #c1ccd7;
+.selecao h2 {
+    font-size: 40px;
     margin-bottom: 15px;
 }
 
-.valores {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 15px;
-}
+.selecao h2 span { color: var(--verde); }
 
-.valor {
-    background: rgba(12,26,40,.95);
-    border: 1px solid #263d50;
-    padding: 22px;
-    border-radius: 10px;
-}
-
-.valor strong {
-    color: var(--azul-claro);
-    display: block;
-    margin-bottom: 5px;
-}
-
-.valor p {
-    font-size: 13px;
-    margin: 0;
+.selecao p {
+    color: #c3cbd0;
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.8;
 }
 
 /* GALERIA */
+
+.galeria { background: #101519; }
 
 .fotos {
     display: grid;
@@ -323,133 +378,126 @@ nav a:hover { color: var(--azul); }
 
 .fotos img {
     width: 100%;
-    height: 220px;
-    object-fit: contain;
-    background: white;
-    border-radius: 10px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 9px;
     transition: .3s;
 }
 
-.fotos img:hover { transform: scale(1.03); }
+.fotos img:hover {
+    transform: scale(1.03);
+    filter: brightness(1.2);
+}
 
-/* SEGURANÇA */
+/* FRASE */
 
-.seguranca {
-    background: #111d29;
+.frase {
     text-align: center;
+    padding: 85px 10%;
 }
 
-.seguranca h2 {
-    font-size: 28px;
-    margin-bottom: 15px;
-}
-
-.seguranca p {
-    color: var(--cinza);
-    max-width: 650px;
+.frase h2 {
+    font-size: clamp(25px,4vw,42px);
+    font-style: italic;
+    max-width: 850px;
     margin: auto;
 }
 
-/* COMUNIDADE */
+.frase span { color: var(--dourado); }
 
-.contato { text-align: center; }
-
-.contato h2 {
-    font-size: 32px;
-    margin-bottom: 12px;
-}
-
-.contato p {
-    color: var(--cinza);
-    margin-bottom: 25px;
+.frase p {
+    color: var(--verde);
+    margin-top: 20px;
+    font-weight: bold;
+    letter-spacing: 3px;
 }
 
 /* RODAPÉ */
 
 footer {
-    background: #050a10;
-    padding: 35px 8%;
-    border-top: 1px solid #263747;
+    background: #050709;
+    padding: 40px 8%;
+    border-top: 1px solid #30383c;
 }
 
-.footer-conteudo {
+.footer-content {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    justify-content: space-between;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 footer p {
     color: var(--cinza);
-    font-size: 13px;
+    font-size: 12px;
 }
 
-.redes {
-    display: flex;
-    gap: 20px;
+footer a:hover { color: var(--verde); }
+
+@keyframes subir {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.redes a:hover { color: var(--azul); }
+/* CELULAR */
 
-/* RESPONSIVIDADE */
-
-@media(max-width:1000px) {
-    .cards { grid-template-columns: repeat(2,1fr); }
+@media(max-width:950px) {
+    .timeline { grid-template-columns: repeat(2,1fr); }
+    .historia { grid-template-columns: 1fr; }
 }
 
 @media(max-width:700px) {
-    header { min-height: 68px; padding: 0 5%; }
+    header { padding: 0 5%; }
 
-    .botao-menu { display: block; }
+    .menu-btn { display: block; }
 
     nav {
         display: none;
         position: absolute;
-        top: 68px;
+        top: 78px;
         left: 0;
         width: 100%;
-        background: #080e15;
-        flex-direction: column;
+        background: #080a0d;
         padding: 25px;
-        gap: 22px;
+        flex-direction: column;
+        border-bottom: 1px solid #30383c;
     }
 
     nav.aberto { display: flex; }
 
-    .botao-header { display: none; }
-
     .hero {
-        min-height: 500px;
+        min-height: 600px;
         padding: 60px 7%;
-        background-position: 60% center;
+        background-position: 65% center;
     }
 
-    .hero h1 { font-size: 48px; }
+    .hero h1 { font-size: 65px; }
 
-    .destaques {
-        grid-template-columns: repeat(2,1fr);
-        padding: 20px 5%;
-    }
+    .numeros { grid-template-columns: repeat(2,1fr); gap: 25px; }
 
-    .destaque:nth-child(2) { border-right: none; }
+    .numero:nth-child(2) { border: none; }
 
-    .secao { padding: 55px 6%; }
+    .secao { padding: 60px 6%; }
 
-    .titulo-secao h2 { font-size: 27px; }
+    .titulo h2 { font-size: 30px; }
 
-    .cards { grid-template-columns: 1fr; }
+    .timeline { grid-template-columns: 1fr; }
 
-    .sobre { grid-template-columns: 1fr; }
+    .momentos { grid-template-columns: 1fr; }
 
     .fotos { grid-template-columns: repeat(2,1fr); }
 
-    .fotos img { height: 150px; }
+    .fotos img { height: 160px; }
 
-    .footer-conteudo {
+    .historia-img { height: 350px; }
+
+    .footer-content {
         flex-direction: column;
         text-align: center;
     }
+
+    .btn-outline { display: inline-block; margin: 15px 0 0; }
 }
 
 @media(prefers-reduced-motion:reduce) {
@@ -466,361 +514,312 @@ footer p {
 
 <header>
     <a href="#inicio" class="logo">
-        MUNDO DO <span>GRAU</span>
-        <small>MOTOS • CULTURA • RESPEITO</small>
+        NEYMAR<span>JR.</span>
+        <small>O CRAQUE BRASILEIRO</small>
     </a>
 
-    <button class="botao-menu" id="menuBotao"
-    aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">☰</button>
 
     <nav id="menu">
         <a href="#inicio">Início</a>
-        <a href="#motos">Motos</a>
-        <a href="#curiosidades">Curiosidades</a>
+        <a href="#historia">História</a>
+        <a href="#carreira">Carreira</a>
+        <a href="#momentos">Momentos</a>
         <a href="#galeria">Galeria</a>
-        <a href="#sobre">Sobre</a>
     </nav>
-
-    <a href="#comunidade" class="botao-header">VIVA ESSA CULTURA</a>
 </header>
 
+<!-- CAPA -->
+
 <section class="hero" id="inicio">
-    <div class="hero-conteudo">
-        <div class="subtitulo">MOTOS • CULTURA • LIBERDADE</div>
+    <div class="hero-content">
+        <div class="tag">BRASIL • FUTEBOL • HISTÓRIA</div>
 
-        <h1>MUNDO DO <span>GRAU</span></h1>
+        <h1>NEYMAR<span>JR.</span></h1>
 
-        <p>
-            Aqui é o lugar certo para quem vive a paixão
-            pelas duas rodas. Informações, novidades,
-            curiosidades e tudo sobre o universo das motos.
-        </p>
-
-        <div class="botoes">
-            <a href="#motos" class="botao">🏍️ Conheça as motos</a>
-            <a href="#galeria" class="botao-contorno">Ver galeria</a>
-        </div>
-    </div>
-</section>
-
-<section class="destaques">
-    <div class="destaque">
-        <div class="icone">🏍️</div>
-        <h3>MOTOS</h3>
-        <p>Conheça os modelos</p>
-    </div>
-
-    <div class="destaque">
-        <div class="icone">🔥</div>
-        <h3>CULTURA</h3>
-        <p>Universo das duas rodas</p>
-    </div>
-
-    <div class="destaque">
-        <div class="icone">🛡️</div>
-        <h3>SEGURANÇA</h3>
-        <p>Proteção em primeiro lugar</p>
-    </div>
-
-    <div class="destaque">
-        <div class="icone">👥</div>
-        <h3>COMUNIDADE</h3>
-        <p>Paixão compartilhada</p>
-    </div>
-</section>
-
-<!-- MOTOS -->
-
-<section class="secao" id="motos">
-    <div class="titulo-secao">
-        <span>01 / MOTOCICLETAS</span>
-        <h2>Conheça as <span style="color:#078bff">máquinas</span></h2>
-        <p>Quatro motos que chamam atenção no mundo das duas rodas.</p>
-    </div>
-
-    <div class="cards">
-
-        <!-- TRIUMPH TIGER SPORT 660 -->
-
-        <div class="card">
-            <div class="card-imagem">
-                <img
-                src="https://production.autoforce.com/uploads/version/profile_image/14304/model_middle_webp_comprar-interstellar-blue-mineral-grey_1f0e70253e.png.webp"
-                alt="Triumph Tiger Sport 660 2026"
-                loading="lazy">
-            </div>
-
-            <div class="card-conteudo">
-                <h3>Triumph Tiger Sport 660</h3>
-                <p>
-                    Uma moto de estilo aventureiro,
-                    conhecida pelo conforto e versatilidade.
-                </p>
-                <a class="link-card"
-                href="https://www.triumphmotorcycles.com.br/"
-                target="_blank" rel="noopener noreferrer">
-                    CONHECER MARCA →
-                </a>
-            </div>
-        </div>
-
-        <!-- HONDA CG 160 -->
-
-        <div class="card">
-            <div class="card-imagem">
-                <img
-                src="https://www.honda.com.br/motos/sites/hda/files/2026-10/CGFan-Lateral-%20Cinza-%20Perolizado.webp"
-                alt="Honda CG 160 Fan"
-                loading="lazy">
-            </div>
-
-            <div class="card-conteudo">
-                <h3>Honda CG 160 Fan</h3>
-                <p>
-                    Uma das motos mais populares do Brasil,
-                    conhecida pela praticidade no dia a dia.
-                </p>
-                <a class="link-card"
-                href="https://www.honda.com.br/motos/street/city/cg160-fan"
-                target="_blank" rel="noopener noreferrer">
-                    CONHECER MARCA →
-                </a>
-            </div>
-        </div>
-
-        <!-- BMW S1000RR -->
-
-        <div class="card">
-            <div class="card-imagem">
-                <img
-                src="https://cdn.autopapo.com.br/box/uploads/2025/05/13112251/bmw-s-1000-rr-2026-6.jpg"
-                alt="BMW S1000RR 2026"
-                loading="lazy">
-            </div>
-
-            <div class="card-conteudo">
-                <h3>BMW S1000RR</h3>
-                <p>
-                    Uma superesportiva com visual marcante
-                    e tecnologia voltada ao desempenho.
-                </p>
-                <a class="link-card"
-                href="https://www.bmw-motorrad.com.br/pt/models/sport/s1000rr.html"
-                target="_blank" rel="noopener noreferrer">
-                    CONHECER MARCA →
-                </a>
-            </div>
-        </div>
-
-        <!-- HONDA SAHARA 300 -->
-
-        <div class="card">
-            <div class="card-imagem">
-                <img
-                src="https://cmssaladeimprensa.honda.com.br//sites/default/files/styles/crop_thumbnail/public/2025-08/PROOM_Sahara%20300%202026_EST_%20%288%29.jpg?itok=bzeDhTS_"
-                alt="Honda Sahara 300 2026"
-                loading="lazy">
-            </div>
-
-            <div class="card-conteudo">
-                <h3>Honda Sahara 300</h3>
-                <p>
-                    Uma motocicleta trail que combina
-                    versatilidade, conforto e aventura.
-                </p>
-                <a class="link-card"
-                href="https://saladeimprensa.honda.com.br/motocicletas/adventure/sahara-300"
-                target="_blank" rel="noopener noreferrer">
-                    CONHECER MARCA →
-                </a>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<!-- CURIOSIDADES -->
-
-<section class="secao curiosidades" id="curiosidades">
-    <div class="titulo-secao">
-        <span>02 / UNIVERSO DO GRAU</span>
-        <h2>Explore nossa <span style="color:#078bff">cultura</span></h2>
-        <p>Conhecimento, histórias e informações sobre motociclismo.</p>
-    </div>
-
-    <div class="cards">
-        <div class="card">
-            <div class="card-conteudo">
-                <div class="icone">🏍️</div>
-                <h3>O que é grau?</h3>
-                <p>Conheça a história e o significado dessa expressão na cultura das motos.</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-conteudo">
-                <div class="icone">👥</div>
-                <h3>Cultura das motos</h3>
-                <p>Um estilo de vida que une pessoas com a mesma paixão.</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-conteudo">
-                <div class="icone">📅</div>
-                <h3>Encontros</h3>
-                <p>Conheça eventos e encontros de motociclistas.</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-conteudo">
-                <div class="icone">🛡️</div>
-                <h3>Equipamentos</h3>
-                <p>Informações sobre capacetes, jaquetas, luvas e proteção.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- SOBRE -->
-
-<section class="secao sobre" id="sobre">
-    <div>
-        <div class="subtitulo">03 / NOSSO PROPÓSITO</div>
-
-        <h2>Mais que motos,<br>uma <span>comunidade.</span></h2>
+        <h2>O MENINO DA VILA</h2>
 
         <p>
-            O Mundo do Grau nasceu para reunir informações,
-            curiosidades e novidades sobre o universo das duas rodas.
+            Talento, criatividade e personalidade.
+            Uma história marcada por grandes jogadas,
+            conquistas e momentos inesquecíveis no futebol.
         </p>
 
-        <p>
-            A verdadeira paixão pelo motociclismo também envolve
-            responsabilidade, respeito e união.
-        </p>
+        <a href="#historia" class="btn">CONHEÇA SUA HISTÓRIA →</a>
+        <a href="#galeria" class="btn-outline">VER FOTOS</a>
+    </div>
+</section>
 
-        <a href="#comunidade" class="botao">CONHEÇA NOSSO SITE →</a>
+<!-- DESTAQUES -->
+
+<section class="numeros">
+    <div class="numero">
+        <h2>10</h2>
+        <p>CAMISA MARCANTE</p>
     </div>
 
-    <div class="valores">
-        <div class="valor">
-            <strong>🛡️ Respeito</strong>
-            <p>Responsabilidade no trânsito e nas ruas.</p>
+    <div class="numero">
+        <h2>2011</h2>
+        <p>LIBERTADORES</p>
+    </div>
+
+    <div class="numero">
+        <h2>2015</h2>
+        <p>CHAMPIONS LEAGUE</p>
+    </div>
+
+    <div class="numero">
+        <h2>2016</h2>
+        <p>OURO OLÍMPICO</p>
+    </div>
+</section>
+
+<!-- HISTÓRIA -->
+
+<section class="secao" id="historia">
+    <div class="historia">
+        <div class="historia-img">
+            <img
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/Neymar%20Junior%20Brazil%20V%20Morocco%2013%20June%202026-40.jpg"
+            alt="Neymar Jr em campo">
         </div>
 
-        <div class="valor">
-            <strong>👥 União</strong>
-            <p>Entre pessoas apaixonadas por motos.</p>
-        </div>
+        <div class="historia-texto">
+            <div class="tag">01 / SUA HISTÓRIA</div>
 
-        <div class="valor">
-            <strong>🏍️ Paixão</strong>
-            <p>O amor pelo mundo das duas rodas.</p>
-        </div>
+            <h2>De Santos para o <span>mundo.</span></h2>
 
-        <div class="valor">
-            <strong>⭐ Segurança</strong>
-            <p>Proteção sempre em primeiro lugar.</p>
+            <p>
+                Neymar da Silva Santos Júnior nasceu em
+                5 de fevereiro de 1992, em Mogi das Cruzes,
+                São Paulo.
+            </p>
+
+            <p>
+                Desde jovem, chamou atenção pelo talento,
+                habilidade, velocidade e criatividade com a bola.
+                Sua trajetória começou a ganhar destaque no Santos FC.
+            </p>
+
+            <p>
+                Com o passar dos anos, conquistou espaço em
+                grandes clubes e se tornou um dos nomes mais
+                conhecidos do futebol brasileiro.
+            </p>
+
+            <a href="#carreira" class="btn">VER SUA TRAJETÓRIA →</a>
         </div>
     </div>
+</section>
+
+<!-- CARREIRA -->
+
+<section class="secao carreira" id="carreira">
+    <div class="titulo">
+        <span>02 / TRAJETÓRIA</span>
+        <h2>Uma carreira <b>histórica.</b></h2>
+        <p>Alguns dos capítulos mais importantes da sua caminhada.</p>
+    </div>
+
+    <div class="timeline">
+
+        <div class="time-card">
+            <div class="ano">2009 – 2013</div>
+            <h3>Santos FC</h3>
+            <p>
+                Revelação do futebol brasileiro.
+                Conquistou a Libertadores de 2011
+                e ganhou reconhecimento mundial.
+            </p>
+        </div>
+
+        <div class="time-card">
+            <div class="ano">2013 – 2017</div>
+            <h3>Barcelona</h3>
+            <p>
+                Formou um ataque histórico e conquistou
+                a Champions League na temporada 2014/15.
+            </p>
+        </div>
+
+        <div class="time-card">
+            <div class="ano">2017 – 2023</div>
+            <h3>PSG</h3>
+            <p>
+                Viveu grandes temporadas na França,
+                conquistando títulos nacionais
+                e chegando à final da Champions.
+            </p>
+        </div>
+
+        <div class="time-card">
+            <div class="ano">2023 – 2025</div>
+            <h3>Al-Hilal</h3>
+            <p>
+                Uma nova etapa da carreira no futebol
+                saudita, marcada por desafios e retorno
+                aos gramados após lesões.
+            </p>
+        </div>
+
+        <div class="time-card">
+            <div class="ano">2025 –</div>
+            <h3>Volta ao Santos</h3>
+            <p>
+                Retornou ao clube onde começou sua trajetória,
+                reencontrando a torcida santista.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- MOMENTOS -->
+
+<section class="secao" id="momentos">
+    <div class="titulo">
+        <span>03 / MOMENTOS INESQUECÍVEIS</span>
+        <h2>Capítulos que marcaram <b>época.</b></h2>
+        <p>Algumas conquistas especiais da trajetória de Neymar.</p>
+    </div>
+
+    <div class="momentos">
+
+        <div class="momento">
+            <img
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/Neymar%20Rio%202016.jpg"
+            alt="Neymar nas Olimpíadas de 2016"
+            loading="lazy">
+            <div>
+                <h3>Ouro Olímpico</h3>
+                <p>Rio 2016: o Brasil conquistou seu primeiro ouro olímpico no futebol masculino.</p>
+            </div>
+        </div>
+
+        <div class="momento">
+            <img
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/Neymar%20-%20FC%20Barcelona%20-%202015.jpg"
+            alt="Neymar no Barcelona"
+            loading="lazy">
+            <div>
+                <h3>Era Barcelona</h3>
+                <p>Uma fase de grandes jogadas e conquistas ao lado de grandes craques.</p>
+            </div>
+        </div>
+
+        <div class="momento">
+            <img
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/Bra-Cos%20%281%29.jpg"
+            alt="Neymar com a seleção brasileira"
+            loading="lazy">
+            <div>
+                <h3>Seleção Brasileira</h3>
+                <p>Um dos grandes nomes da história recente da seleção.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- SELEÇÃO -->
+
+<section class="secao selecao">
+    <div class="tag">ORGULHO BRASILEIRO</div>
+
+    <h2>O futebol é <span>paixão!</span></h2>
+
+    <p>
+        Vestir a camisa da seleção brasileira representa
+        um capítulo especial da história de Neymar.
+        Com talento e personalidade, construiu momentos
+        importantes defendendo o Brasil.
+    </p>
 </section>
 
 <!-- GALERIA -->
 
 <section class="secao galeria" id="galeria">
-    <div class="titulo-secao">
+    <div class="titulo">
         <span>04 / GALERIA</span>
-        <h2>Galeria de <span style="color:#078bff">fotos</span></h2>
-        <p>Imagens dos modelos que fazem parte do nosso site.</p>
+        <h2>Momentos em <b>imagens.</b></h2>
+        <p>Fotografias de diferentes fases da carreira.</p>
     </div>
 
     <div class="fotos">
-        <img src="https://production.autoforce.com/uploads/version/profile_image/14304/model_middle_webp_comprar-interstellar-blue-mineral-grey_1f0e70253e.png.webp" alt="Triumph Tiger Sport" loading="lazy">
 
-        <img src="https://www.honda.com.br/motos/sites/hda/files/2026-10/CGFan-Lateral-%20Cinza-%20Perolizado.webp" alt="Honda CG 160" loading="lazy">
+        <img
+        src="https://commons.wikimedia.org/wiki/Special:FilePath/Neymar%20Junior%20Brazil%20V%20Morocco%2013%20June%202026-40.jpg"
+        alt="Neymar em 2026" loading="lazy">
 
-        <img src="https://cdn.autopapo.com.br/box/uploads/2025/05/13112251/bmw-s-1000-rr-2026-6.jpg" alt="BMW S1000RR" loading="lazy">
+        <img
+        src="https://commons.wikimedia.org/wiki/Special:FilePath/Neymar%20Rio%202016.jpg"
+        alt="Neymar nas Olimpíadas" loading="lazy">
 
-        <img src="https://cmssaladeimprensa.honda.com.br//sites/default/files/styles/crop_thumbnail/public/2025-08/PROOM_Sahara%20300%202026_EST_%20%288%29.jpg?itok=bzeDhTS_" alt="Honda Sahara 300" loading="lazy">
+        <img
+        src="https://commons.wikimedia.org/wiki/Special:FilePath/Neymar%20-%20FC%20Barcelona%20-%202015.jpg"
+        alt="Neymar no Barcelona" loading="lazy">
 
-        <img src="https://production.autoforce.com/uploads/version/profile_image/14305/model_middle_webp_comprar-silver-ice-intense-orange_a1515162bb.png.webp" alt="Tiger Sport laranja" loading="lazy">
+        <img
+        src="https://commons.wikimedia.org/wiki/Special:FilePath/Bra-Cos%20%281%29.jpg"
+        alt="Neymar com o Brasil" loading="lazy">
 
-        <img src="https://www.honda.com.br/motos/sites/hda/files/2026-10/CGFan-Lateral-Cinza-Metalico.webp" alt="Honda CG 160 preta" loading="lazy">
+        <img
+        src="https://commons.wikimedia.org/wiki/Special:FilePath/Neymar%202012.JPG"
+        alt="Neymar em 2012" loading="lazy">
+
+        <img
+        src="https://commons.wikimedia.org/wiki/Special:FilePath/Neymar%20PSG.jpg"
+        alt="Neymar no PSG" loading="lazy">
+
     </div>
 </section>
 
-<!-- SEGURANÇA -->
+<!-- FRASE -->
 
-<section class="secao seguranca">
-    <h2>🏁 A paixão é grande. A responsabilidade também!</h2>
-    <p>
-        Valorize a vida, utilize equipamentos de proteção
-        e respeite as leis de trânsito. A pilotagem responsável
-        e os locais autorizados são fundamentais para a segurança.
-    </p>
-</section>
+<section class="frase">
+    <h2>
+        "O talento abre portas, mas a dedicação
+        constrói uma <span>história.</span>"
+    </h2>
 
-<!-- COMUNIDADE -->
-
-<section class="secao contato" id="comunidade">
-    <div class="subtitulo">FAÇA PARTE DESSA CULTURA</div>
-
-    <h2>O mundo das motos espera por você!</h2>
-
-    <p>
-        Continue explorando, conhecendo modelos e descobrindo
-        tudo sobre o universo das duas rodas.
-    </p>
-
-    <a href="#inicio" class="botao">VOLTAR AO INÍCIO ↑</a>
+    <p>NEYMAR JR. • FUTEBOL</p>
 </section>
 
 <!-- RODAPÉ -->
 
 <footer>
-    <div class="footer-conteudo">
+    <div class="footer-content">
         <a href="#inicio" class="logo">
-            MUNDO DO <span>GRAU</span>
-            <small>MOTOS • CULTURA • RESPEITO</small>
+            NEYMAR<span>JR.</span>
+            <small>O CRAQUE BRASILEIRO</small>
         </a>
 
-        <p>
-            © <span id="ano"></span> Mundo do Grau.
-            Todos os direitos reservados.
-        </p>
+        <p>© <span id="ano"></span> Neymar Jr. Fan Page. Projeto de fã, sem vínculo oficial.</p>
 
-        <div class="redes">
-            <a href="#inicio">Início</a>
-            <a href="#motos">Motos</a>
-            <a href="#galeria">Galeria</a>
-        </div>
+        <a href="#inicio">VOLTAR AO TOPO ↑</a>
     </div>
 </footer>
 
 <script>
-const menuBotao = document.getElementById("menuBotao");
+const menuBtn = document.getElementById("menuBtn");
 const menu = document.getElementById("menu");
 
-menuBotao.addEventListener("click", () => {
+menuBtn.addEventListener("click", () => {
     const aberto = menu.classList.toggle("aberto");
 
-    menuBotao.setAttribute("aria-expanded", aberto);
-    menuBotao.setAttribute(
+    menuBtn.textContent = aberto ? "✕" : "☰";
+    menuBtn.setAttribute("aria-expanded", aberto);
+    menuBtn.setAttribute(
         "aria-label",
         aberto ? "Fechar menu" : "Abrir menu"
     );
-
-    menuBotao.textContent = aberto ? "✕" : "☰";
 });
 
 document.querySelectorAll("#menu a").forEach(link => {
     link.addEventListener("click", () => {
         menu.classList.remove("aberto");
-        menuBotao.textContent = "☰";
-        menuBotao.setAttribute("aria-expanded", "false");
-        menuBotao.setAttribute("aria-label", "Abrir menu");
+        menuBtn.textContent = "☰";
+        menuBtn.setAttribute("aria-expanded", "false");
     });
 });
 
