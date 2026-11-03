@@ -4,7 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEYMAR JR. | O Craque Brasileiro</title>
+<meta name="description" content="Black Motor Garage - Mecânica especializada, manutenção e cuidados automotivos.">
+<title>BLACK MOTOR GARAGE | Oficina Automotiva</title>
 
 <style>
 * {
@@ -14,61 +15,62 @@
 }
 
 :root {
-    --preto: #080a0d;
-    --card: #14191d;
-    --verde: #00c875;
-    --dourado: #d9b45b;
+    --preto: #080b10;
+    --card: #111923;
+    --azul: #078bff;
+    --azul-claro: #48b0ff;
     --branco: #fff;
-    --cinza: #aab2b9;
+    --cinza: #aab6c4;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background: var(--preto);
     color: var(--branco);
-    overflow-x: hidden;
+    line-height: 1.6;
 }
 
 a {
-    color: inherit;
     text-decoration: none;
+    color: inherit;
 }
 
 header {
-    height: 78px;
+    height: 80px;
     padding: 0 8%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    background: rgba(8,11,16,.97);
+    border-bottom: 1px solid #243342;
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(8,10,13,.96);
-    border-bottom: 1px solid #282c30;
 }
 
 .logo {
-    font-size: 25px;
+    font-size: 24px;
     font-weight: 900;
     font-style: italic;
-    letter-spacing: 1px;
+    line-height: 1;
 }
 
-.logo span { color: var(--verde); }
+.logo span { color: var(--azul); }
 
 .logo small {
     display: block;
+    color: var(--cinza);
     font-size: 9px;
-    color: var(--dourado);
     letter-spacing: 4px;
     font-style: normal;
+    margin-top: 7px;
 }
 
 nav {
     display: flex;
-    gap: 27px;
+    gap: 25px;
 }
 
 nav a {
@@ -78,297 +80,256 @@ nav a {
     transition: .3s;
 }
 
-nav a:hover { color: var(--verde); }
+nav a:hover { color: var(--azul); }
 
 .menu-btn {
     display: none;
     color: white;
     background: none;
     border: none;
-    font-size: 27px;
-    cursor: pointer;
+    font-size: 28px;
 }
 
 /* CAPA */
 
 .hero {
-    min-height: 680px;
+    min-height: 650px;
     display: flex;
     align-items: center;
-    padding: 70px 10%;
-    position: relative;
+    padding: 80px 10%;
     background:
-    linear-gradient(90deg, #080a0d 5%, rgba(8,10,13,.82) 43%, rgba(8,10,13,.08) 100%),
-    url("https://commons.wikimedia.org/wiki/Special:FilePath/Neymar%20Junior%20Brazil%20V%20Morocco%2013%20June%202026-40.jpg");
+    linear-gradient(90deg,#080b10 5%,rgba(8,11,16,.86) 48%,rgba(8,11,16,.25)),
+    url("https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1800&q=85");
+    background-position: center;
     background-size: cover;
-    background-position: center 30%;
 }
 
-.hero-content {
-    max-width: 600px;
-    animation: subir 1s ease;
-}
+.hero-content { max-width: 650px; }
 
 .tag {
-    color: var(--dourado);
-    letter-spacing: 5px;
+    color: var(--azul-claro);
     font-size: 12px;
     font-weight: bold;
+    letter-spacing: 5px;
     margin-bottom: 20px;
 }
 
 .hero h1 {
-    font-size: clamp(65px, 10vw, 115px);
+    font-size: clamp(48px,8vw,95px);
+    line-height: .98;
     font-weight: 900;
-    line-height: .9;
     font-style: italic;
 }
 
 .hero h1 span {
-    color: var(--verde);
+    color: var(--azul);
     display: block;
 }
 
-.hero h2 {
-    color: var(--dourado);
-    letter-spacing: 8px;
-    font-size: 22px;
-    margin: 20px 0;
-}
-
 .hero p {
-    color: #d3d7da;
+    color: #d0d7df;
+    max-width: 500px;
+    margin: 25px 0 30px;
     font-size: 16px;
-    max-width: 450px;
-    line-height: 1.8;
-    margin-bottom: 30px;
 }
 
 .btn {
     display: inline-block;
-    padding: 15px 27px;
-    background: var(--verde);
-    color: #06130d;
+    background: var(--azul);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 6px;
+    font-weight: bold;
     font-size: 13px;
-    font-weight: 900;
-    border-radius: 5px;
     transition: .3s;
 }
 
 .btn:hover {
+    background: #0069c9;
     transform: translateY(-4px);
-    background: #00ed8a;
 }
 
 .btn-outline {
+    display: inline-block;
     border: 1px solid white;
     padding: 14px 25px;
-    border-radius: 5px;
+    border-radius: 6px;
     font-size: 13px;
     font-weight: bold;
     margin-left: 10px;
 }
 
-.btn-outline:hover {
-    border-color: var(--verde);
-    color: var(--verde);
-}
+/* DIFERENCIAIS */
 
-/* DESTAQUES */
-
-.numeros {
+.destaques {
     display: grid;
     grid-template-columns: repeat(4,1fr);
     padding: 35px 8%;
-    background: #101519;
-    border-top: 1px solid #30383c;
-    border-bottom: 1px solid #30383c;
+    background: #101821;
+    border-bottom: 1px solid #263747;
 }
 
-.numero {
+.destaque {
     text-align: center;
-    border-right: 1px solid #343b40;
+    padding: 10px;
+    border-right: 1px solid #34404c;
 }
 
-.numero:last-child { border: none; }
+.destaque:last-child { border: none; }
 
-.numero h2 {
-    color: var(--verde);
-    font-size: 34px;
+.destaque .icone {
+    font-size: 30px;
+    margin-bottom: 8px;
 }
 
-.numero p {
-    color: var(--cinza);
+.destaque h3 { font-size: 15px; }
+
+.destaque p {
     font-size: 12px;
-    letter-spacing: 2px;
+    color: var(--cinza);
 }
 
 /* SEÇÕES */
 
-.secao { padding: 85px 9%; }
+.secao { padding: 80px 8%; }
 
-.titulo {
-    margin-bottom: 40px;
-}
+.titulo { margin-bottom: 40px; }
 
 .titulo span {
-    color: var(--dourado);
+    color: var(--azul-claro);
     font-size: 12px;
     font-weight: bold;
     letter-spacing: 4px;
 }
 
 .titulo h2 {
-    font-size: 38px;
+    font-size: 36px;
     margin-top: 8px;
 }
 
-.titulo h2 b { color: var(--verde); }
+.titulo h2 b { color: var(--azul); }
 
 .titulo p {
     color: var(--cinza);
     margin-top: 8px;
 }
 
-/* HISTÓRIA */
+/* SERVIÇOS */
 
-.historia {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
-}
+.servicos { background: #0e151e; }
 
-.historia-img {
-    height: 470px;
-    overflow: hidden;
-    border-radius: 12px;
-    border: 1px solid #343b40;
-}
-
-.historia-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
-.historia-texto h2 {
-    font-size: 38px;
-    margin-bottom: 20px;
-}
-
-.historia-texto h2 span { color: var(--verde); }
-
-.historia-texto p {
-    color: var(--cinza);
-    line-height: 1.9;
-    margin-bottom: 17px;
-}
-
-/* CARREIRA */
-
-.carreira { background: #101519; }
-
-.timeline {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 20px;
-}
-
-.time-card {
-    background: var(--card);
-    padding: 25px;
-    border: 1px solid #303a40;
-    border-radius: 10px;
-    transition: .3s;
-}
-
-.time-card:hover {
-    border-color: var(--verde);
-    transform: translateY(-7px);
-}
-
-.time-card .ano {
-    color: var(--dourado);
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.time-card h3 {
-    color: var(--verde);
-    font-size: 22px;
-    margin: 12px 0;
-}
-
-.time-card p {
-    color: var(--cinza);
-    font-size: 14px;
-    line-height: 1.7;
-}
-
-/* MOMENTOS */
-
-.momentos {
+.cards {
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 20px;
 }
 
-.momento {
+.card {
     background: var(--card);
+    border: 1px solid #273747;
     border-radius: 10px;
     overflow: hidden;
-    border: 1px solid #303a40;
+    transition: .3s;
 }
 
-.momento img {
+.card:hover {
+    transform: translateY(-7px);
+    border-color: var(--azul);
+    box-shadow: 0 10px 30px rgba(0,139,255,.12);
+}
+
+.card-img {
+    height: 190px;
+    overflow: hidden;
+}
+
+.card-img img {
     width: 100%;
-    height: 240px;
+    height: 100%;
     object-fit: cover;
-    display: block;
     transition: .4s;
 }
 
-.momento:hover img { transform: scale(1.05); }
+.card:hover img { transform: scale(1.06); }
 
-.momento div { padding: 20px; }
+.card-content { padding: 23px; }
 
-.momento h3 { margin-bottom: 8px; }
+.card-content .icone {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
 
-.momento p {
+.card-content h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.card-content p {
     color: var(--cinza);
-    font-size: 13px;
+    font-size: 14px;
 }
 
-/* SELEÇÃO */
+/* SOBRE */
 
-.selecao {
-    text-align: center;
-    background:
-    linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.9)),
-    url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1600&q=85");
-    background-size: cover;
-    background-position: center;
+.sobre {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
 }
 
-.selecao h2 {
-    font-size: 40px;
-    margin-bottom: 15px;
+.sobre-img {
+    height: 450px;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
-.selecao h2 span { color: var(--verde); }
+.sobre-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-.selecao p {
-    color: #c3cbd0;
-    max-width: 700px;
-    margin: auto;
-    line-height: 1.8;
+.sobre-texto h2 {
+    font-size: 38px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.sobre-texto h2 span { color: var(--azul); }
+
+.sobre-texto p {
+    color: var(--cinza);
+    margin-bottom: 18px;
+}
+
+.valores {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.valor {
+    background: var(--card);
+    border: 1px solid #273747;
+    border-radius: 8px;
+    padding: 17px;
+}
+
+.valor strong {
+    color: var(--azul-claro);
+    display: block;
+}
+
+.valor p {
+    font-size: 12px;
+    margin: 5px 0 0;
 }
 
 /* GALERIA */
 
-.galeria { background: #101519; }
+.galeria { background: #0e151e; }
 
 .fotos {
     display: grid;
@@ -378,7 +339,7 @@ nav a:hover { color: var(--verde); }
 
 .fotos img {
     width: 100%;
-    height: 250px;
+    height: 230px;
     object-fit: cover;
     border-radius: 9px;
     transition: .3s;
@@ -386,46 +347,77 @@ nav a:hover { color: var(--verde); }
 
 .fotos img:hover {
     transform: scale(1.03);
-    filter: brightness(1.2);
+    filter: brightness(1.15);
 }
 
-/* FRASE */
+/* PROCESSO */
 
-.frase {
+.processo {
+    background: #101821;
+}
+
+.etapas {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.etapa {
+    padding: 25px;
+    border-left: 3px solid var(--azul);
+    background: var(--card);
+}
+
+.etapa span {
+    color: var(--azul);
+    font-size: 27px;
+    font-weight: 900;
+}
+
+.etapa h3 { margin: 10px 0; }
+
+.etapa p {
+    color: var(--cinza);
+    font-size: 14px;
+}
+
+/* CONTATO */
+
+.contato {
     text-align: center;
-    padding: 85px 10%;
+    background:
+    linear-gradient(rgba(5,12,20,.88),rgba(5,12,20,.95)),
+    url("https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1600&q=85");
+    background-size: cover;
+    background-position: center;
 }
 
-.frase h2 {
-    font-size: clamp(25px,4vw,42px);
-    font-style: italic;
-    max-width: 850px;
-    margin: auto;
+.contato h2 {
+    font-size: 38px;
+    margin: 15px 0;
 }
 
-.frase span { color: var(--dourado); }
+.contato h2 span { color: var(--azul); }
 
-.frase p {
-    color: var(--verde);
-    margin-top: 20px;
-    font-weight: bold;
-    letter-spacing: 3px;
+.contato p {
+    color: var(--cinza);
+    margin-bottom: 25px;
 }
 
 /* RODAPÉ */
 
 footer {
-    background: #050709;
-    padding: 40px 8%;
-    border-top: 1px solid #30383c;
+    background: #05080c;
+    padding: 35px 8%;
+    border-top: 1px solid #273747;
 }
 
 .footer-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 footer p {
@@ -433,18 +425,10 @@ footer p {
     font-size: 12px;
 }
 
-footer a:hover { color: var(--verde); }
+/* RESPONSIVIDADE */
 
-@keyframes subir {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* CELULAR */
-
-@media(max-width:950px) {
-    .timeline { grid-template-columns: repeat(2,1fr); }
-    .historia { grid-template-columns: 1fr; }
+@media(max-width:1000px) {
+    .cards { grid-template-columns: repeat(2,1fr); }
 }
 
 @media(max-width:700px) {
@@ -455,49 +439,51 @@ footer a:hover { color: var(--verde); }
     nav {
         display: none;
         position: absolute;
-        top: 78px;
+        top: 80px;
         left: 0;
         width: 100%;
-        background: #080a0d;
         padding: 25px;
+        background: #080b10;
         flex-direction: column;
-        border-bottom: 1px solid #30383c;
+        border-bottom: 1px solid #273747;
     }
 
     nav.aberto { display: flex; }
 
     .hero {
-        min-height: 600px;
+        min-height: 570px;
         padding: 60px 7%;
-        background-position: 65% center;
+        background-position: 60% center;
     }
 
-    .hero h1 { font-size: 65px; }
+    .hero h1 { font-size: 55px; }
 
-    .numeros { grid-template-columns: repeat(2,1fr); gap: 25px; }
+    .destaques { grid-template-columns: repeat(2,1fr); }
 
-    .numero:nth-child(2) { border: none; }
+    .destaque:nth-child(2) { border-right: none; }
 
-    .secao { padding: 60px 6%; }
+    .secao { padding: 55px 6%; }
 
-    .titulo h2 { font-size: 30px; }
+    .titulo h2 { font-size: 29px; }
 
-    .timeline { grid-template-columns: 1fr; }
+    .cards { grid-template-columns: 1fr; }
 
-    .momentos { grid-template-columns: 1fr; }
+    .sobre { grid-template-columns: 1fr; }
+
+    .sobre-img { height: 300px; }
 
     .fotos { grid-template-columns: repeat(2,1fr); }
 
-    .fotos img { height: 160px; }
+    .fotos img { height: 150px; }
 
-    .historia-img { height: 350px; }
+    .etapas { grid-template-columns: 1fr; }
 
     .footer-content {
         flex-direction: column;
         text-align: center;
     }
 
-    .btn-outline { display: inline-block; margin: 15px 0 0; }
+    .btn-outline { margin: 15px 0 0; }
 }
 
 @media(prefers-reduced-motion:reduce) {
@@ -514,18 +500,19 @@ footer a:hover { color: var(--verde); }
 
 <header>
     <a href="#inicio" class="logo">
-        NEYMAR<span>JR.</span>
-        <small>O CRAQUE BRASILEIRO</small>
+        BLACK <span>MOTOR</span>
+        <small>GARAGE • CENTRO AUTOMOTIVO</small>
     </a>
 
-    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <button class="menu-btn" id="menuBtn"
+    aria-label="Abrir menu" aria-expanded="false">☰</button>
 
     <nav id="menu">
         <a href="#inicio">Início</a>
-        <a href="#historia">História</a>
-        <a href="#carreira">Carreira</a>
-        <a href="#momentos">Momentos</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#sobre">Sobre</a>
         <a href="#galeria">Galeria</a>
+        <a href="#contato">Contato</a>
     </nav>
 </header>
 
@@ -533,256 +520,244 @@ footer a:hover { color: var(--verde); }
 
 <section class="hero" id="inicio">
     <div class="hero-content">
-        <div class="tag">BRASIL • FUTEBOL • HISTÓRIA</div>
+        <div class="tag">QUALIDADE • CONFIANÇA • DESEMPENHO</div>
 
-        <h1>NEYMAR<span>JR.</span></h1>
-
-        <h2>O MENINO DA VILA</h2>
+        <h1>BLACK <span>MOTOR</span></h1>
 
         <p>
-            Talento, criatividade e personalidade.
-            Uma história marcada por grandes jogadas,
-            conquistas e momentos inesquecíveis no futebol.
+            Cuidamos do seu veículo com atenção,
+            qualidade e profissionalismo.
+            Sua confiança é o nosso combustível.
         </p>
 
-        <a href="#historia" class="btn">CONHEÇA SUA HISTÓRIA →</a>
-        <a href="#galeria" class="btn-outline">VER FOTOS</a>
+        <a href="#servicos" class="btn">CONHEÇA NOSSOS SERVIÇOS →</a>
+        <a href="#contato" class="btn-outline">FALE CONOSCO</a>
     </div>
 </section>
 
-<!-- DESTAQUES -->
+<!-- DIFERENCIAIS -->
 
-<section class="numeros">
-    <div class="numero">
-        <h2>10</h2>
-        <p>CAMISA MARCANTE</p>
+<section class="destaques">
+    <div class="destaque">
+        <div class="icone">🔧</div>
+        <h3>MANUTENÇÃO</h3>
+        <p>Cuidados com seu veículo</p>
     </div>
 
-    <div class="numero">
-        <h2>2011</h2>
-        <p>LIBERTADORES</p>
+    <div class="destaque">
+        <div class="icone">⚙️</div>
+        <h3>QUALIDADE</h3>
+        <p>Atenção em cada serviço</p>
     </div>
 
-    <div class="numero">
-        <h2>2015</h2>
-        <p>CHAMPIONS LEAGUE</p>
+    <div class="destaque">
+        <div class="icone">🛡️</div>
+        <h3>CONFIANÇA</h3>
+        <p>Transparência no atendimento</p>
     </div>
 
-    <div class="numero">
-        <h2>2016</h2>
-        <p>OURO OLÍMPICO</p>
-    </div>
-</section>
-
-<!-- HISTÓRIA -->
-
-<section class="secao" id="historia">
-    <div class="historia">
-        <div class="historia-img">
-            <img
-            src="https://commons.wikimedia.org/wiki/Special:FilePath/Neymar%20Junior%20Brazil%20V%20Morocco%2013%20June%202026-40.jpg"
-            alt="Neymar Jr em campo">
-        </div>
-
-        <div class="historia-texto">
-            <div class="tag">01 / SUA HISTÓRIA</div>
-
-            <h2>De Santos para o <span>mundo.</span></h2>
-
-            <p>
-                Neymar da Silva Santos Júnior nasceu em
-                5 de fevereiro de 1992, em Mogi das Cruzes,
-                São Paulo.
-            </p>
-
-            <p>
-                Desde jovem, chamou atenção pelo talento,
-                habilidade, velocidade e criatividade com a bola.
-                Sua trajetória começou a ganhar destaque no Santos FC.
-            </p>
-
-            <p>
-                Com o passar dos anos, conquistou espaço em
-                grandes clubes e se tornou um dos nomes mais
-                conhecidos do futebol brasileiro.
-            </p>
-
-            <a href="#carreira" class="btn">VER SUA TRAJETÓRIA →</a>
-        </div>
+    <div class="destaque">
+        <div class="icone">🏁</div>
+        <h3>DESEMPENHO</h3>
+        <p>Cuidado com seu automóvel</p>
     </div>
 </section>
 
-<!-- CARREIRA -->
+<!-- SERVIÇOS -->
 
-<section class="secao carreira" id="carreira">
+<section class="secao servicos" id="servicos">
     <div class="titulo">
-        <span>02 / TRAJETÓRIA</span>
-        <h2>Uma carreira <b>histórica.</b></h2>
-        <p>Alguns dos capítulos mais importantes da sua caminhada.</p>
+        <span>01 / O QUE FAZEMOS</span>
+        <h2>Nossos <b>serviços.</b></h2>
+        <p>Soluções automotivas para cuidar do seu veículo.</p>
     </div>
 
-    <div class="timeline">
+    <div class="cards">
 
-        <div class="time-card">
-            <div class="ano">2009 – 2013</div>
-            <h3>Santos FC</h3>
-            <p>
-                Revelação do futebol brasileiro.
-                Conquistou a Libertadores de 2011
-                e ganhou reconhecimento mundial.
-            </p>
+        <div class="card">
+            <div class="card-img">
+                <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=700&q=80" alt="Motor de automóvel">
+            </div>
+            <div class="card-content">
+                <div class="icone">🔧</div>
+                <h3>Mecânica geral</h3>
+                <p>Manutenção e reparos para manter seu veículo em boas condições.</p>
+            </div>
         </div>
 
-        <div class="time-card">
-            <div class="ano">2013 – 2017</div>
-            <h3>Barcelona</h3>
-            <p>
-                Formou um ataque histórico e conquistou
-                a Champions League na temporada 2014/15.
-            </p>
+        <div class="card">
+            <div class="card-img">
+                <img src="https://images.unsplash.com/photo-1635784063386-9a1c7a2c7e0d?auto=format&fit=crop&w=700&q=80" alt="Troca de óleo automotiva">
+            </div>
+            <div class="card-content">
+                <div class="icone">🛢️</div>
+                <h3>Troca de óleo</h3>
+                <p>Cuidados com óleo e filtros conforme as recomendações do fabricante.</p>
+            </div>
         </div>
 
-        <div class="time-card">
-            <div class="ano">2017 – 2023</div>
-            <h3>PSG</h3>
-            <p>
-                Viveu grandes temporadas na França,
-                conquistando títulos nacionais
-                e chegando à final da Champions.
-            </p>
+        <div class="card">
+            <div class="card-img">
+                <img src="https://images.unsplash.com/photo-1600705722909-2d9eab1c3c4c?auto=format&fit=crop&w=700&q=80" alt="Freios automotivos">
+            </div>
+            <div class="card-content">
+                <div class="icone">🛞</div>
+                <h3>Sistema de freios</h3>
+                <p>Inspeção e manutenção dos componentes do sistema de frenagem.</p>
+            </div>
         </div>
 
-        <div class="time-card">
-            <div class="ano">2023 – 2025</div>
-            <h3>Al-Hilal</h3>
-            <p>
-                Uma nova etapa da carreira no futebol
-                saudita, marcada por desafios e retorno
-                aos gramados após lesões.
-            </p>
+        <div class="card">
+            <div class="card-img">
+                <img src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=700&q=80" alt="Mecânico trabalhando em veículo">
+            </div>
+            <div class="card-content">
+                <div class="icone">⚙️</div>
+                <h3>Suspensão</h3>
+                <p>Avaliação e manutenção dos componentes da suspensão.</p>
+            </div>
         </div>
 
-        <div class="time-card">
-            <div class="ano">2025 –</div>
-            <h3>Volta ao Santos</h3>
-            <p>
-                Retornou ao clube onde começou sua trajetória,
-                reencontrando a torcida santista.
-            </p>
+        <div class="card">
+            <div class="card-img">
+                <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=700&q=80" alt="Diagnóstico técnico">
+            </div>
+            <div class="card-content">
+                <div class="icone">💻</div>
+                <h3>Diagnóstico</h3>
+                <p>Verificação de possíveis falhas e avaliação técnica do veículo.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-img">
+                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80" alt="Automóvel esportivo">
+            </div>
+            <div class="card-content">
+                <div class="icone">🚘</div>
+                <h3>Revisão preventiva</h3>
+                <p>Inspeção de itens importantes para ajudar a evitar problemas futuros.</p>
+            </div>
         </div>
 
     </div>
 </section>
 
-<!-- MOMENTOS -->
+<!-- SOBRE -->
 
-<section class="secao" id="momentos">
+<section class="secao" id="sobre">
+    <div class="sobre">
+
+        <div class="sobre-img">
+            <img src="https://images.unsplash.com/photo-1632823471565-1ecdf5c5f7c7?auto=format&fit=crop&w=900&q=85" alt="Oficina automotiva">
+        </div>
+
+        <div class="sobre-texto">
+            <div class="tag">02 / SOBRE A OFICINA</div>
+
+            <h2>Mais que uma oficina, <span>uma parceria.</span></h2>
+
+            <p>
+                A Black Motor Garage nasceu com o objetivo
+                de oferecer cuidado, qualidade e atenção
+                para cada veículo que passa por nossa oficina.
+            </p>
+
+            <p>
+                Nosso compromisso é trabalhar com
+                responsabilidade, transparência e dedicação
+                em cada atendimento.
+            </p>
+
+            <div class="valores">
+                <div class="valor">
+                    <strong>🔧 Qualidade</strong>
+                    <p>Atenção em cada detalhe.</p>
+                </div>
+
+                <div class="valor">
+                    <strong>🤝 Confiança</strong>
+                    <p>Respeito ao cliente.</p>
+                </div>
+
+                <div class="valor">
+                    <strong>⚙️ Dedicação</strong>
+                    <p>Compromisso com o serviço.</p>
+                </div>
+
+                <div class="valor">
+                    <strong>🛡️ Segurança</strong>
+                    <p>Cuidado com seu veículo.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- PROCESSO -->
+
+<section class="secao processo">
     <div class="titulo">
-        <span>03 / MOMENTOS INESQUECÍVEIS</span>
-        <h2>Capítulos que marcaram <b>época.</b></h2>
-        <p>Algumas conquistas especiais da trajetória de Neymar.</p>
+        <span>03 / COMO FUNCIONA</span>
+        <h2>Seu atendimento em <b>3 etapas.</b></h2>
+        <p>Um processo simples para cuidar do seu veículo.</p>
     </div>
 
-    <div class="momentos">
-
-        <div class="momento">
-            <img
-            src="https://commons.wikimedia.org/wiki/Special:FilePath/Neymar%20Rio%202016.jpg"
-            alt="Neymar nas Olimpíadas de 2016"
-            loading="lazy">
-            <div>
-                <h3>Ouro Olímpico</h3>
-                <p>Rio 2016: o Brasil conquistou seu primeiro ouro olímpico no futebol masculino.</p>
-            </div>
+    <div class="etapas">
+        <div class="etapa">
+            <span>01</span>
+            <h3>Entre em contato</h3>
+            <p>Conte para nós o que seu veículo precisa.</p>
         </div>
 
-        <div class="momento">
-            <img
-            src="https://commons.wikimedia.org/wiki/Special:FilePath/Neymar%20-%20FC%20Barcelona%20-%202015.jpg"
-            alt="Neymar no Barcelona"
-            loading="lazy">
-            <div>
-                <h3>Era Barcelona</h3>
-                <p>Uma fase de grandes jogadas e conquistas ao lado de grandes craques.</p>
-            </div>
+        <div class="etapa">
+            <span>02</span>
+            <h3>Avaliação</h3>
+            <p>O veículo passa por uma avaliação técnica.</p>
         </div>
 
-        <div class="momento">
-            <img
-            src="https://commons.wikimedia.org/wiki/Special:FilePath/Bra-Cos%20%281%29.jpg"
-            alt="Neymar com a seleção brasileira"
-            loading="lazy">
-            <div>
-                <h3>Seleção Brasileira</h3>
-                <p>Um dos grandes nomes da história recente da seleção.</p>
-            </div>
+        <div class="etapa">
+            <span>03</span>
+            <h3>Serviço</h3>
+            <p>Após aprovação do orçamento, realizamos o serviço combinado.</p>
         </div>
-
     </div>
-</section>
-
-<!-- SELEÇÃO -->
-
-<section class="secao selecao">
-    <div class="tag">ORGULHO BRASILEIRO</div>
-
-    <h2>O futebol é <span>paixão!</span></h2>
-
-    <p>
-        Vestir a camisa da seleção brasileira representa
-        um capítulo especial da história de Neymar.
-        Com talento e personalidade, construiu momentos
-        importantes defendendo o Brasil.
-    </p>
 </section>
 
 <!-- GALERIA -->
 
 <section class="secao galeria" id="galeria">
     <div class="titulo">
-        <span>04 / GALERIA</span>
-        <h2>Momentos em <b>imagens.</b></h2>
-        <p>Fotografias de diferentes fases da carreira.</p>
+        <span>04 / NOSSO ESPAÇO</span>
+        <h2>Galeria da <b>oficina.</b></h2>
+        <p>O universo da mecânica e do cuidado automotivo.</p>
     </div>
 
     <div class="fotos">
-
-        <img
-        src="https://commons.wikimedia.org/wiki/Special:FilePath/Neymar%20Junior%20Brazil%20V%20Morocco%2013%20June%202026-40.jpg"
-        alt="Neymar em 2026" loading="lazy">
-
-        <img
-        src="https://commons.wikimedia.org/wiki/Special:FilePath/Neymar%20Rio%202016.jpg"
-        alt="Neymar nas Olimpíadas" loading="lazy">
-
-        <img
-        src="https://commons.wikimedia.org/wiki/Special:FilePath/Neymar%20-%20FC%20Barcelona%20-%202015.jpg"
-        alt="Neymar no Barcelona" loading="lazy">
-
-        <img
-        src="https://commons.wikimedia.org/wiki/Special:FilePath/Bra-Cos%20%281%29.jpg"
-        alt="Neymar com o Brasil" loading="lazy">
-
-        <img
-        src="https://commons.wikimedia.org/wiki/Special:FilePath/Neymar%202012.JPG"
-        alt="Neymar em 2012" loading="lazy">
-
-        <img
-        src="https://commons.wikimedia.org/wiki/Special:FilePath/Neymar%20PSG.jpg"
-        alt="Neymar no PSG" loading="lazy">
-
+        <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=700&q=80" alt="Motor automotivo">
+        <img src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=700&q=80" alt="Mecânico na oficina">
+        <img src="https://images.unsplash.com/photo-1632823471565-1ecdf5c5f7c7?auto=format&fit=crop&w=700&q=80" alt="Oficina">
+        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=700&q=80" alt="Trabalho técnico">
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80" alt="Carro esportivo">
+        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=700&q=80" alt="Automóvel">
     </div>
 </section>
 
-<!-- FRASE -->
+<!-- CONTATO -->
 
-<section class="frase">
-    <h2>
-        "O talento abre portas, mas a dedicação
-        constrói uma <span>história.</span>"
-    </h2>
+<section class="secao contato" id="contato">
+    <div class="tag">05 / FALE CONOSCO</div>
 
-    <p>NEYMAR JR. • FUTEBOL</p>
+    <h2>Seu carro merece o <span>melhor cuidado.</span></h2>
+
+    <p>
+        Entre em contato com a Black Motor Garage
+        e converse conosco sobre o serviço que precisa.
+    </p>
+
+    <a href="mailto:contato@blackmotorgarage.com"
+       class="btn">ENVIAR E-MAIL →</a>
 </section>
 
 <!-- RODAPÉ -->
@@ -790,11 +765,14 @@ footer a:hover { color: var(--verde); }
 <footer>
     <div class="footer-content">
         <a href="#inicio" class="logo">
-            NEYMAR<span>JR.</span>
-            <small>O CRAQUE BRASILEIRO</small>
+            BLACK <span>MOTOR</span>
+            <small>GARAGE • CENTRO AUTOMOTIVO</small>
         </a>
 
-        <p>© <span id="ano"></span> Neymar Jr. Fan Page. Projeto de fã, sem vínculo oficial.</p>
+        <p>
+            © <span id="ano"></span> Black Motor Garage.
+            Todos os direitos reservados.
+        </p>
 
         <a href="#inicio">VOLTAR AO TOPO ↑</a>
     </div>
