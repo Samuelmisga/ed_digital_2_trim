@@ -1,809 +1,205 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Black Motor Garage - Mecânica especializada, manutenção e cuidados automotivos.">
-<title>BLACK MOTOR GARAGE | Oficina Automotiva</title>
-
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --preto: #080b10;
-    --card: #111923;
-    --azul: #078bff;
-    --azul-claro: #48b0ff;
-    --branco: #fff;
-    --cinza: #aab6c4;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: var(--preto);
-    color: var(--branco);
-    line-height: 1.6;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-header {
-    height: 80px;
-    padding: 0 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(8,11,16,.97);
-    border-bottom: 1px solid #243342;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: 900;
-    font-style: italic;
-    line-height: 1;
-}
-
-.logo span { color: var(--azul); }
-
-.logo small {
-    display: block;
-    color: var(--cinza);
-    font-size: 9px;
-    letter-spacing: 4px;
-    font-style: normal;
-    margin-top: 7px;
-}
-
-nav {
-    display: flex;
-    gap: 25px;
-}
-
-nav a {
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: .3s;
-}
-
-nav a:hover { color: var(--azul); }
-
-.menu-btn {
-    display: none;
-    color: white;
-    background: none;
-    border: none;
-    font-size: 28px;
-}
-
-/* CAPA */
-
-.hero {
-    min-height: 650px;
-    display: flex;
-    align-items: center;
-    padding: 80px 10%;
-    background:
-    linear-gradient(90deg,#080b10 5%,rgba(8,11,16,.86) 48%,rgba(8,11,16,.25)),
-    url("https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1800&q=85");
-    background-position: center;
-    background-size: cover;
-}
-
-.hero-content { max-width: 650px; }
-
-.tag {
-    color: var(--azul-claro);
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 5px;
-    margin-bottom: 20px;
-}
-
-.hero h1 {
-    font-size: clamp(48px,8vw,95px);
-    line-height: .98;
-    font-weight: 900;
-    font-style: italic;
-}
-
-.hero h1 span {
-    color: var(--azul);
-    display: block;
-}
-
-.hero p {
-    color: #d0d7df;
-    max-width: 500px;
-    margin: 25px 0 30px;
-    font-size: 16px;
-}
-
-.btn {
-    display: inline-block;
-    background: var(--azul);
-    color: white;
-    padding: 15px 25px;
-    border-radius: 6px;
-    font-weight: bold;
-    font-size: 13px;
-    transition: .3s;
-}
-
-.btn:hover {
-    background: #0069c9;
-    transform: translateY(-4px);
-}
-
-.btn-outline {
-    display: inline-block;
-    border: 1px solid white;
-    padding: 14px 25px;
-    border-radius: 6px;
-    font-size: 13px;
-    font-weight: bold;
-    margin-left: 10px;
-}
-
-/* DIFERENCIAIS */
-
-.destaques {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    padding: 35px 8%;
-    background: #101821;
-    border-bottom: 1px solid #263747;
-}
-
-.destaque {
-    text-align: center;
-    padding: 10px;
-    border-right: 1px solid #34404c;
-}
-
-.destaque:last-child { border: none; }
-
-.destaque .icone {
-    font-size: 30px;
-    margin-bottom: 8px;
-}
-
-.destaque h3 { font-size: 15px; }
-
-.destaque p {
-    font-size: 12px;
-    color: var(--cinza);
-}
-
-/* SEÇÕES */
-
-.secao { padding: 80px 8%; }
-
-.titulo { margin-bottom: 40px; }
-
-.titulo span {
-    color: var(--azul-claro);
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 4px;
-}
-
-.titulo h2 {
-    font-size: 36px;
-    margin-top: 8px;
-}
-
-.titulo h2 b { color: var(--azul); }
-
-.titulo p {
-    color: var(--cinza);
-    margin-top: 8px;
-}
-
-/* SERVIÇOS */
-
-.servicos { background: #0e151e; }
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 20px;
-}
-
-.card {
-    background: var(--card);
-    border: 1px solid #273747;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: .3s;
-}
-
-.card:hover {
-    transform: translateY(-7px);
-    border-color: var(--azul);
-    box-shadow: 0 10px 30px rgba(0,139,255,.12);
-}
-
-.card-img {
-    height: 190px;
-    overflow: hidden;
-}
-
-.card-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: .4s;
-}
-
-.card:hover img { transform: scale(1.06); }
-
-.card-content { padding: 23px; }
-
-.card-content .icone {
-    font-size: 28px;
-    margin-bottom: 10px;
-}
-
-.card-content h3 {
-    font-size: 19px;
-    margin-bottom: 10px;
-}
-
-.card-content p {
-    color: var(--cinza);
-    font-size: 14px;
-}
-
-/* SOBRE */
-
-.sobre {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 50px;
-}
-
-.sobre-img {
-    height: 450px;
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-.sobre-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.sobre-texto h2 {
-    font-size: 38px;
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
-
-.sobre-texto h2 span { color: var(--azul); }
-
-.sobre-texto p {
-    color: var(--cinza);
-    margin-bottom: 18px;
-}
-
-.valores {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 15px;
-    margin-top: 25px;
-}
-
-.valor {
-    background: var(--card);
-    border: 1px solid #273747;
-    border-radius: 8px;
-    padding: 17px;
-}
-
-.valor strong {
-    color: var(--azul-claro);
-    display: block;
-}
-
-.valor p {
-    font-size: 12px;
-    margin: 5px 0 0;
-}
-
-/* GALERIA */
-
-.galeria { background: #0e151e; }
-
-.fotos {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 15px;
-}
-
-.fotos img {
-    width: 100%;
-    height: 230px;
-    object-fit: cover;
-    border-radius: 9px;
-    transition: .3s;
-}
-
-.fotos img:hover {
-    transform: scale(1.03);
-    filter: brightness(1.15);
-}
-
-/* PROCESSO */
-
-.processo {
-    background: #101821;
-}
-
-.etapas {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 20px;
-}
-
-.etapa {
-    padding: 25px;
-    border-left: 3px solid var(--azul);
-    background: var(--card);
-}
-
-.etapa span {
-    color: var(--azul);
-    font-size: 27px;
-    font-weight: 900;
-}
-
-.etapa h3 { margin: 10px 0; }
-
-.etapa p {
-    color: var(--cinza);
-    font-size: 14px;
-}
-
-/* CONTATO */
-
-.contato {
-    text-align: center;
-    background:
-    linear-gradient(rgba(5,12,20,.88),rgba(5,12,20,.95)),
-    url("https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1600&q=85");
-    background-size: cover;
-    background-position: center;
-}
-
-.contato h2 {
-    font-size: 38px;
-    margin: 15px 0;
-}
-
-.contato h2 span { color: var(--azul); }
-
-.contato p {
-    color: var(--cinza);
-    margin-bottom: 25px;
-}
-
-/* RODAPÉ */
-
-footer {
-    background: #05080c;
-    padding: 35px 8%;
-    border-top: 1px solid #273747;
-}
-
-.footer-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-footer p {
-    color: var(--cinza);
-    font-size: 12px;
-}
-
-/* RESPONSIVIDADE */
-
-@media(max-width:1000px) {
-    .cards { grid-template-columns: repeat(2,1fr); }
-}
-
-@media(max-width:700px) {
-    header { padding: 0 5%; }
-
-    .menu-btn { display: block; }
-
-    nav {
-        display: none;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        padding: 25px;
-        background: #080b10;
-        flex-direction: column;
-        border-bottom: 1px solid #273747;
-    }
-
-    nav.aberto { display: flex; }
-
-    .hero {
-        min-height: 570px;
-        padding: 60px 7%;
-        background-position: 60% center;
-    }
-
-    .hero h1 { font-size: 55px; }
-
-    .destaques { grid-template-columns: repeat(2,1fr); }
-
-    .destaque:nth-child(2) { border-right: none; }
-
-    .secao { padding: 55px 6%; }
-
-    .titulo h2 { font-size: 29px; }
-
-    .cards { grid-template-columns: 1fr; }
-
-    .sobre { grid-template-columns: 1fr; }
-
-    .sobre-img { height: 300px; }
-
-    .fotos { grid-template-columns: repeat(2,1fr); }
-
-    .fotos img { height: 150px; }
-
-    .etapas { grid-template-columns: 1fr; }
-
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .btn-outline { margin: 15px 0 0; }
-}
-
-@media(prefers-reduced-motion:reduce) {
-    html { scroll-behavior: auto; }
-    *,*::before,*::after {
-        animation-duration: .01ms !important;
-        transition-duration: .01ms !important;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+melhore esse codigo
+    <title>Blog Samuel</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: #eef3f8;
+            font-family: Arial, sans-serif;
+            color: #112A46;
+        }
+
+        header {
+            background-color: #112A46;
+            color: white;
+            text-align: center;
+            max-width: 800px;
+            margin: 20px auto 0;
+            padding: 25px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+        }
+
+        header p {
+            margin: 0;
+            color: #dce8f5;
+        }
+
+        main {
+            background-color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        article {
+            background-color: #f8fafc;
+            border: 1px solid #dce3ea;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+        }
+
+        article h2 {
+            margin-top: 0;
+        }
+
+        article h3 {
+            color: #1d4d7a;
+            margin-top: 25px;
+        }
+
+        .artigo-autor {
+            font-weight: bold;
+            color: #54708c;
+        }
+
+        .imagem-olimpiadas {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: white;
+            border: 1px solid #ccd6df;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background-color: #eef4f9;
+        }
+
+        footer {
+            max-width: 800px;
+            margin: 0 auto 20px;
+            background-color: #112A46;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 0 0 10px 10px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-    <a href="#inicio" class="logo">
-        BLACK <span>MOTOR</span>
-        <small>GARAGE • CENTRO AUTOMOTIVO</small>
-    </a>
+    <header>
+        <h1>História das Olimpíadas 🏆</h1>
+        <p>Vou compartilhar conhecimentos sobre as Olimpíadas</p>
+    </header>
 
-    <button class="menu-btn" id="menuBtn"
-    aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <main>
 
-    <nav id="menu">
-        <a href="#inicio">Início</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#galeria">Galeria</a>
-        <a href="#contato">Contato</a>
-    </nav>
-</header>
+        <article>
+            <h2>Meu Primeiro Post!</h2>
 
-<!-- CAPA -->
-
-<section class="hero" id="inicio">
-    <div class="hero-content">
-        <div class="tag">QUALIDADE • CONFIANÇA • DESEMPENHO</div>
-
-        <h1>BLACK <span>MOTOR</span></h1>
-
-        <p>
-            Cuidamos do seu veículo com atenção,
-            qualidade e profissionalismo.
-            Sua confiança é o nosso combustível.
-        </p>
-
-        <a href="#servicos" class="btn">CONHEÇA NOSSOS SERVIÇOS →</a>
-        <a href="#contato" class="btn-outline">FALE CONOSCO</a>
-    </div>
-</section>
-
-<!-- DIFERENCIAIS -->
-
-<section class="destaques">
-    <div class="destaque">
-        <div class="icone">🔧</div>
-        <h3>MANUTENÇÃO</h3>
-        <p>Cuidados com seu veículo</p>
-    </div>
-
-    <div class="destaque">
-        <div class="icone">⚙️</div>
-        <h3>QUALIDADE</h3>
-        <p>Atenção em cada serviço</p>
-    </div>
-
-    <div class="destaque">
-        <div class="icone">🛡️</div>
-        <h3>CONFIANÇA</h3>
-        <p>Transparência no atendimento</p>
-    </div>
-
-    <div class="destaque">
-        <div class="icone">🏁</div>
-        <h3>DESEMPENHO</h3>
-        <p>Cuidado com seu automóvel</p>
-    </div>
-</section>
-
-<!-- SERVIÇOS -->
-
-<section class="secao servicos" id="servicos">
-    <div class="titulo">
-        <span>01 / O QUE FAZEMOS</span>
-        <h2>Nossos <b>serviços.</b></h2>
-        <p>Soluções automotivas para cuidar do seu veículo.</p>
-    </div>
-
-    <div class="cards">
-
-        <div class="card">
-            <div class="card-img">
-                <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=700&q=80" alt="Motor de automóvel">
-            </div>
-            <div class="card-content">
-                <div class="icone">🔧</div>
-                <h3>Mecânica geral</h3>
-                <p>Manutenção e reparos para manter seu veículo em boas condições.</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-img">
-                <img src="https://images.unsplash.com/photo-1635784063386-9a1c7a2c7e0d?auto=format&fit=crop&w=700&q=80" alt="Troca de óleo automotiva">
-            </div>
-            <div class="card-content">
-                <div class="icone">🛢️</div>
-                <h3>Troca de óleo</h3>
-                <p>Cuidados com óleo e filtros conforme as recomendações do fabricante.</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-img">
-                <img src="https://images.unsplash.com/photo-1600705722909-2d9eab1c3c4c?auto=format&fit=crop&w=700&q=80" alt="Freios automotivos">
-            </div>
-            <div class="card-content">
-                <div class="icone">🛞</div>
-                <h3>Sistema de freios</h3>
-                <p>Inspeção e manutenção dos componentes do sistema de frenagem.</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-img">
-                <img src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=700&q=80" alt="Mecânico trabalhando em veículo">
-            </div>
-            <div class="card-content">
-                <div class="icone">⚙️</div>
-                <h3>Suspensão</h3>
-                <p>Avaliação e manutenção dos componentes da suspensão.</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-img">
-                <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=700&q=80" alt="Diagnóstico técnico">
-            </div>
-            <div class="card-content">
-                <div class="icone">💻</div>
-                <h3>Diagnóstico</h3>
-                <p>Verificação de possíveis falhas e avaliação técnica do veículo.</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-img">
-                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80" alt="Automóvel esportivo">
-            </div>
-            <div class="card-content">
-                <div class="icone">🚘</div>
-                <h3>Revisão preventiva</h3>
-                <p>Inspeção de itens importantes para ajudar a evitar problemas futuros.</p>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<!-- SOBRE -->
-
-<section class="secao" id="sobre">
-    <div class="sobre">
-
-        <div class="sobre-img">
-            <img src="https://images.unsplash.com/photo-1632823471565-1ecdf5c5f7c7?auto=format&fit=crop&w=900&q=85" alt="Oficina automotiva">
-        </div>
-
-        <div class="sobre-texto">
-            <div class="tag">02 / SOBRE A OFICINA</div>
-
-            <h2>Mais que uma oficina, <span>uma parceria.</span></h2>
+            <p class="artigo-autor">Por: Samuel Misga</p>
 
             <p>
-                A Black Motor Garage nasceu com o objetivo
-                de oferecer cuidado, qualidade e atenção
-                para cada veículo que passa por nossa oficina.
+                Boas-vindas ao meu novo blog! Aqui vou compartilhar
+                informações e curiosidades sobre a história das Olimpíadas.
             </p>
+
+            <button>
+                🏆 <span>0</span>
+            </button>
+        </article>
+
+        <article>
+            <h2>💡 Curiosidades que você precisa saber sobre as Olimpíadas</h2>
+
+            <h3>1. Competição sem roupas</h3>
 
             <p>
-                Nosso compromisso é trabalhar com
-                responsabilidade, transparência e dedicação
-                em cada atendimento.
+                Na Grécia Antiga, os atletas competiam totalmente nus.
+                O objetivo era celebrar a forma física e homenagear os deuses.
             </p>
 
-            <div class="valores">
-                <div class="valor">
-                    <strong>🔧 Qualidade</strong>
-                    <p>Atenção em cada detalhe.</p>
-                </div>
+            <h3>2. A medalha da amizade</h3>
 
-                <div class="valor">
-                    <strong>🤝 Confiança</strong>
-                    <p>Respeito ao cliente.</p>
-                </div>
+            <p>
+                Em Berlim 1936, os saltadores japoneses Shuhei Nishida e
+                Sueo Oe empataram no segundo lugar. Eles decidiram não
+                disputar um desempate e dividiram suas medalhas de prata
+                e bronze ao meio.
+            </p>
 
-                <div class="valor">
-                    <strong>⚙️ Dedicação</strong>
-                    <p>Compromisso com o serviço.</p>
-                </div>
+            <h3>3. Maratona de seis meses</h3>
 
-                <div class="valor">
-                    <strong>🛡️ Segurança</strong>
-                    <p>Cuidado com seu veículo.</p>
-                </div>
-            </div>
-        </div>
+            <p>
+                A edição de Londres 1908 foi uma das mais longas da história
+                moderna. Os Jogos começaram em abril e terminaram em outubro,
+                durando cerca de 180 dias.
+            </p>
 
-    </div>
-</section>
+            <h3>4. Um pedaço de Paris para levar para casa</h3>
 
-<!-- PROCESSO -->
+            <p>
+                Nas Olimpíadas de Paris 2024, cada medalha tinha um pequeno
+                pedaço de ferro original retirado da Torre Eiffel.
+            </p>
 
-<section class="secao processo">
-    <div class="titulo">
-        <span>03 / COMO FUNCIONA</span>
-        <h2>Seu atendimento em <b>3 etapas.</b></h2>
-        <p>Um processo simples para cuidar do seu veículo.</p>
-    </div>
+            <button>
+                🥇 <span>0</span>
+            </button>
+        </article>
 
-    <div class="etapas">
-        <div class="etapa">
-            <span>01</span>
-            <h3>Entre em contato</h3>
-            <p>Conte para nós o que seu veículo precisa.</p>
-        </div>
+    </main>
 
-        <div class="etapa">
-            <span>02</span>
-            <h3>Avaliação</h3>
-            <p>O veículo passa por uma avaliação técnica.</p>
-        </div>
+    <footer>
+        <p>Blog do Samuel • História das Olimpíadas 🏆</p>
+    </footer>
 
-        <div class="etapa">
-            <span>03</span>
-            <h3>Serviço</h3>
-            <p>Após aprovação do orçamento, realizamos o serviço combinado.</p>
-        </div>
-    </div>
-</section>
+    <script>
+        const botoes = document.querySelectorAll("button");
 
-<!-- GALERIA -->
+        botoes.forEach(function (botao) {
 
-<section class="secao galeria" id="galeria">
-    <div class="titulo">
-        <span>04 / NOSSO ESPAÇO</span>
-        <h2>Galeria da <b>oficina.</b></h2>
-        <p>O universo da mecânica e do cuidado automotivo.</p>
-    </div>
+            let curtiu = false;
 
-    <div class="fotos">
-        <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=700&q=80" alt="Motor automotivo">
-        <img src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=700&q=80" alt="Mecânico na oficina">
-        <img src="https://images.unsplash.com/photo-1632823471565-1ecdf5c5f7c7?auto=format&fit=crop&w=700&q=80" alt="Oficina">
-        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=700&q=80" alt="Trabalho técnico">
-        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80" alt="Carro esportivo">
-        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=700&q=80" alt="Automóvel">
-    </div>
-</section>
+            botao.addEventListener("click", function () {
 
-<!-- CONTATO -->
+                let numero = botao.querySelector("span");
 
-<section class="secao contato" id="contato">
-    <div class="tag">05 / FALE CONOSCO</div>
+                if (curtiu == false) {
+                    numero.textContent++;
+                    curtiu = true;
+                } else {
+                    numero.textContent--;
+                    curtiu = false;
+                }
 
-    <h2>Seu carro merece o <span>melhor cuidado.</span></h2>
+            });
 
-    <p>
-        Entre em contato com a Black Motor Garage
-        e converse conosco sobre o serviço que precisa.
-    </p>
-
-    <a href="mailto:contato@blackmotorgarage.com"
-       class="btn">ENVIAR E-MAIL →</a>
-</section>
-
-<!-- RODAPÉ -->
-
-<footer>
-    <div class="footer-content">
-        <a href="#inicio" class="logo">
-            BLACK <span>MOTOR</span>
-            <small>GARAGE • CENTRO AUTOMOTIVO</small>
-        </a>
-
-        <p>
-            © <span id="ano"></span> Black Motor Garage.
-            Todos os direitos reservados.
-        </p>
-
-        <a href="#inicio">VOLTAR AO TOPO ↑</a>
-    </div>
-</footer>
-
-<script>
-const menuBtn = document.getElementById("menuBtn");
-const menu = document.getElementById("menu");
-
-menuBtn.addEventListener("click", () => {
-    const aberto = menu.classList.toggle("aberto");
-
-    menuBtn.textContent = aberto ? "✕" : "☰";
-    menuBtn.setAttribute("aria-expanded", aberto);
-    menuBtn.setAttribute(
-        "aria-label",
-        aberto ? "Fechar menu" : "Abrir menu"
-    );
-});
-
-document.querySelectorAll("#menu a").forEach(link => {
-    link.addEventListener("click", () => {
-        menu.classList.remove("aberto");
-        menuBtn.textContent = "☰";
-        menuBtn.setAttribute("aria-expanded", "false");
-    });
-});
-
-document.getElementById("ano").textContent =
-    new Date().getFullYear();
-</script>
+        });
+    </script>
 
 </body>
+
 </html>
